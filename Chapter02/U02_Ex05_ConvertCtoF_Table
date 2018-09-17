@@ -1,0 +1,29 @@
+# U02_Ex05_ConvertCtoF_Table.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 29 Aug 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: Temperature Converter
+#     Source: Python Programing
+#    Chapter: 2
+#
+# Program Description
+#   This program converts temperature from Celsius to Fahrenheit.
+#
+# Algorithm (pseudocode)
+# Print program intro.
+# Get degree in Celsius and assign it to "celsius"
+# Input the number of degrees in Celsius
+# Process the input (9/5)(Input in C)+32
+# Print output number in Fahrenheit
+def main():
+  print("This program converts from degrees Celsius to degrees Fahrenheit.")
+  celsius = eval(input("What is the Celsius temperature?"))
+  fahrenheit = 9/5*celsius+32
+  print("The temperature is",fahrenheit,"degrees Fahrenheit.")
+
+main()
