@@ -22,16 +22,17 @@
 #
 #
 #
-C;
-num = int(input("How many numbers? "))
-total_sum: int = 0
-try:
-    val = int(num)
-    for n in range(num):
-        numbers = int(input('Enter any number : '))
-        total_sum += numbers
-        avg = total_sum / num
+def main():
+    num = int(input("How many numbers? "))
+    total_sum: int = 0
+    try:
+        val = int(num)
+        for n in range(num):
+            numbers = int(input('Enter any number : '))
+            total_sum += numbers
+            avg = total_sum / num
 
-    print("Average is :", avg)
-except ValueError:
-    print("That is not a valid integer, try again.")
+        print("Average is :", avg)
+    except ValueError:
+        print("That is not a valid integer, try again.")
+main()
