@@ -3,7 +3,7 @@
 #  Author: Jake
 #  Course: Coding for OOP
 # Section: A2
-#    Date: 29 Aug 2018
+#    Date: 10 Oct 2018
 #     IDE: PyCharm
 #
 # Assignment Info
@@ -16,10 +16,12 @@
 #
 # Algorithm (pseudocode)
 # Print program intro.
-# Get distance in Kilometers and assign it to "KKilometers"
-# Input the number of distance in Kilometers
+# Print top of table
+# for i in range+ if statements
+# Set Kilometers = i
 # Process the input  Miles = 0.62137119*Kilometers
-# Print output number in Miles
+# set numbers to certain number of digits to my liking
+# Print output table of Miles and KM
 #
 
 def main():
