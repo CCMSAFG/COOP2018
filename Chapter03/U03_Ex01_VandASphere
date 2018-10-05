@@ -1,0 +1,35 @@
+# U03_Test01_PiConstant.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 25 Sep 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 01
+#     Source: Python Programing
+#    Chapter: 03
+#
+# Program Description
+# Calculator for the surface area and volume of a sphere
+#
+#
+#
+# Algorithm (pseudocode)
+# import math
+# aks for value of r
+# volume = ((4 / 3)*pi*R**3)
+# area = ((4)*pi*R**2)
+# Ask for units
+# print value of area and volume with corresponding units
+def main():
+        import math
+        pi = (math.pi)
+        R = eval(input("What is the radius of the sphere?"))
+        volume = ((4 / 3)*pi*R**3)
+        area = ((4)*pi*R**2)
+        u = (input("What is the unit of the sphere?"))
+        print("The volume of this sphere is "'{:>.2f}{}' " cubed.".format(volume, u))
+        print("The area of this sphere is "'{:>.2f}{}' " squared." .format(area, u))
+main()
