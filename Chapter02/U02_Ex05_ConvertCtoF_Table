@@ -1,4 +1,4 @@
-# U02_Ex05_ConvertCtoF_Table.py
+# U02_Ex09_ConvertCtoF_Conversion.py
 #
 #  Author: Jake
 #  Course: Coding for OOP
@@ -22,9 +22,17 @@
 # Print output number in Fahrenheit
 
 def main():
-  print("This program converts from degrees Celsius to degrees Fahrenheit.")
-  celsius = eval(input("What is the Celsius temperature?"))
-  fahrenheit = 9/5*celsius+32
-  print("The temperature is",fahrenheit,"degrees Fahrenheit.")
+    print("This program produces a table of degrees Celsius and degrees Fahrenheit.")
+    print (" ")
+    print("Celsius|Fahrenheit")
+    print("-------|----------")
+    for i in range(100):
+          if i % 5 == 0:
+                celsius = i
+                fahrenheit = 9 / 5 * celsius + 32
+                if celsius < 10:
+                    celsius = "0"+str(celsius)
+
+                print('    {} | {:>.2f}'.format(celsius, fahrenheit))
 
 main()
