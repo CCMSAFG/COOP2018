@@ -1,4 +1,4 @@
-# U02_Ex05_ConvertCtoF_Table.py
+# U02_Ex09_ConvertCtoF_Conversion.py
 #
 #  Author: Jake
 #  Course: Coding for OOP
@@ -20,10 +20,20 @@
 # Input the number of distance in Kilometers
 # Process the input  Miles = 0.62137119*Kilometers
 # Print output number in Miles
+#
 
 def main():
-    print("This program converts from distance in Kilometers to distance in Miles.")
-    kilometers = eval(input("What is the distance in Kilometers?"))
-    miles = 0.62137119*kilometers
-    print('{:7.4f} kilometers are equal to{:7.2f} miles'.format(kilometers, miles))
+    print("This program creates a chart of distance in Kilometers to distance in Miles from 5KM to 95KM.")
+    print("KM | Miles")
+    print("---|------")
+    for i in range(100):
+        if i % 5 == 0:
+            kilometers = i
+            miles = 0.62137119 * kilometers
+            if kilometers < 10:
+                kilometers = "0"+str(kilometers)
+#            if miles < 10:
+#              miles = "0"+str(miles)
+
+            print('{} | {:>.2f}'.format(kilometers, miles))
 main()
