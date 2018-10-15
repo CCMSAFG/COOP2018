@@ -1,0 +1,40 @@
+# U02_Ex03_AverageofnNum.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 07 Oct 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 03
+#     Source: Python Programing
+#    Chapter: 02
+#
+# Program Description
+# Finds average of multiple numbers
+#
+#
+#
+# Algorithm (pseudocode)
+# print intro
+# find number of number being averaged
+# for loop in range of previous input
+# set value to input(n)
+# total/number of numbers
+# print average
+
+
+def main():
+    print("This gives an average of multiple numbers")
+    n = int(input("How many numbers are there to be averaged?"))
+    total_sum: int = 0
+    for i in range(n):
+            numbers = int(input('Enter any number : '))
+            total_sum += numbers
+            avg = total_sum/n
+
+    print("The average value of your numbers is", avg)
+
+
+main()
