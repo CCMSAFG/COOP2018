@@ -1,0 +1,41 @@
+# U03_Ex09_TriangleGivenSides.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 14 Oct 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 09
+#     Source: Python Programing
+#    Chapter: 03
+#
+# Program Description
+# This program uses Heron's formula to solve the area of a triangle given it's side lengths.
+#
+#
+#
+# Algorithm (pseudocode)
+# import math
+# introduce program
+# get values of sides
+# find value of perimeter
+# use heron's Formula to find area
+# print conclusion
+
+
+def main():
+    import math
+    print("This program uses Heron's formula to solve")
+    print("the area of a triangle given it's side lengths.")
+    print("_______________________________________________")
+    a = int(input("What is the value of the first side?"))
+    b = int(input("What is the value of the second side?"))
+    c = int(input("What is the value of the third side?"))
+    p = (a + b + c) / 2
+    area = str(math.sqrt(p * (p - a)*(p - b)*(p - c)))
+    print("The area of this triangle is", area, "units squared")
+
+
+main()

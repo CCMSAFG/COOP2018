@@ -1,0 +1,42 @@
+# U03_Ex15_PiAprox.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 11 Oct 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise:
+#     Source: Python Programing
+#    Chapter:
+#
+# Program Description
+# Estimates pi using an algorithm
+#
+#
+#
+# Algorithm (pseudocode)
+# import math
+# allow input of number of sequences
+# for loop
+# 4 / (2*i-1) * (-1)**(i-1)
+# that number - pi = difference
+# concluding message
+
+import math
+
+
+def main():
+    n = int(input("How many terms of the sequence do you wish to include? "))
+    api = 0
+    for i in range(1, n+1):
+        ct = 4 / (2*i-1) * (-1)**(i-1)
+        print(ct)
+        api += ct
+    d = math.pi - api
+    print("\nThe approximate value of Pi, with {0} terms in the sequence is {1}.".format(n, api))
+    print("This differs from the value of math.pi by {0}".format(d))
+
+
+main()

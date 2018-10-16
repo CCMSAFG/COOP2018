@@ -1,0 +1,46 @@
+# U03_Ex03MolecularWT.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 07 Oct 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 03
+#     Source: Python Programing
+#    Chapter: 03
+#
+# Program Description
+# This program calculates the molecular weight of a carbohydrate molecule
+# given user inputs for the number of hydrogen, carbon, and oxygen atoms in the molecule.
+#
+#
+#
+# Algorithm (pseudocode)
+# intro
+# define m-weight of H, C, and O
+#    (hydrogen = 1.00794
+#     carbon = 12.0107
+#     oxygen = 15.9994)
+# number of atoms times weight
+# print final weight and conclusion
+#
+
+
+def main():
+    print("\nThis program calculates the molecular weight of a carbohydrate molecule,",
+          "given user inputs for the number of hydrogen, carbon, and oxygen atoms in the molecule.\n")
+    hydrogen = 1.00794
+    carbon = 12.0107
+    oxygen = 15.9994
+    hAtoms = int(input("How many hydrogen atoms are present in the molecule? "))
+    cAtoms = int(input("How many carbon atoms are present in the molecule? "))
+    oAtoms = int(input("How many oxygen atoms are present in the molecule? "))
+    finalWt = hydrogen * hAtoms + carbon * cAtoms + oxygen * oAtoms
+    print(("\nThe molecular weight of a molecule containing {0} hydrogen atoms, \
+{1} carbon atoms, and {2} oxygen atoms is {3} grams/mole.").format(hAtoms, cAtoms, oAtoms, finalWt))
+
+
+main()
+

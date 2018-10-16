@@ -1,0 +1,37 @@
+# U03_Ex10_LofLadder.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 15 Oct 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise:
+#     Source: Python Programing
+#    Chapter:
+#
+# Program Description
+#
+#
+#
+#
+# Algorithm (pseudocode)
+# import math
+# ask for h
+# ask for angle
+# transfer form radians to degrees
+# h / (math.sin(degrees))
+# print conclusion
+
+
+def main():
+    import math
+    h = int(input("What is the height of the wall?"))
+    angle = int(input("What is the angle of the ladder?"))
+    degrees = angle*(math.pi / 180)
+    l = h / (math.sin(degrees))
+    print('The ladder needs to be {:>.4f} units large'.format(l))
+
+
+main()

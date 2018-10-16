@@ -1,0 +1,41 @@
+# U03_Ex07_Distanceof2Points.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 08 Oct 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 07
+#     Source: Python Programing
+#    Chapter: 03
+#
+# Program Description
+# this program finds the distance between 2 points
+#
+#
+#
+# Algorithm (pseudocode)
+# import math
+# get x1, y1, x2,and y2
+# sqrt(((x2 - x1) ** 2) + ((y2 - y1) ** 2))
+# print conclusion
+#
+
+
+def main():
+    import math
+    print("This program takes and input of 2 x and y values "
+          "and calculates the distance between those points.")
+    x1 = float(input("\nPlease enter the x value of the first point: "))
+    y1 = float(input("Please enter the y value of the first point: "))
+    x2 = float(input("\nPlease enter the x value of the second point:"))
+    y2 = float(input("Please enter the y value of the second point:"))
+    d = math.sqrt(((x2 - x1) ** 2) + ((y2 - y1) ** 2))
+    print(" ")
+    print("The distance between points (" + str(x1) + ",", str(y1) + ") and ("
+          + str(x2) + ",", str(y2) + ") is", round(d, 2))
+
+
+main()

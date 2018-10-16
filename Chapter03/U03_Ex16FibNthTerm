@@ -1,0 +1,44 @@
+# U03_Ex16FibNthTerm.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 15 Oct 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 16
+#     Source: Python Programing
+#    Chapter: 03
+#
+# Program Description
+# This is a program for the Fibonacci number for a value you input.
+#
+#
+#
+# Algorithm (pseudocode)
+# introduce code
+# allow input
+# if n<0 make them re-enter positive integer
+# for loop in range of n
+# if n=1 print 1
+# n>1 then (n - 1) + (n - 2)
+# print answer
+# break loop
+
+
+def main():
+    print("This is a program for the Fibonacci number for a value you input.")
+    n = eval(input("Please insert the value of n:"))
+    if n <= 0:
+        print("Please insert positive integer")
+    for i in range(n):
+        if n == 1:
+            print(1)
+        if n > 1:
+            equation = (n - 1) + (n - 2)
+            print(equation)
+            break
+
+
+main()

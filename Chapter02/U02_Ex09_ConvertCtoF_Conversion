@@ -20,11 +20,12 @@
 # Input the number of degrees in Celsius
 # Process the input (9/5)(Input in C)+32
 # Print output number in Fahrenheit
+# NOTICE!!! swap C with F ANd 5/9 with 9/5 also +32 to -32
 
 def main():
   print("This program converts from degrees Celsius to degrees Fahrenheit.")
   celsius = eval(input("What is the Celsius temperature?"))
-  fahrenheit = 9/5*celsius+32
+  fahrenheit = 5/9*celsius-32
   print("The temperature is",fahrenheit,"degrees Fahrenheit.")
 
 main()
