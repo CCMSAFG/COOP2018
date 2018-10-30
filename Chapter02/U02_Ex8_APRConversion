@@ -1,0 +1,37 @@
+# U02_Ex8_APRConversion.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 07 Oct 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 08
+#     Source: Python Programing
+#    Chapter: 2
+#
+# Program Description
+# Uses Percentage Rate, Number of compounds, and number of years to determine the APR of an input.
+#
+#
+#
+# Algorithm (pseudocode)
+# Ask for the percentage rate in percent
+# Ask how many times the number will be compounded
+# Ask for initial value
+# make the percent a decimal
+# Run through the apr equation apr = amount*(1+(percentage Rate/Number of compounds))**Number of Compounds
+# Print output
+
+
+def main():
+    pr = eval(input("What is the percentage rate in percent?"))
+    a = eval(input("How often is the percentage rate compounded per year?"))
+    amount = eval(input("What is the value of money being compounded?"))
+    ppr = (pr/100)
+    apr = amount*(1+(ppr/a))**a
+    print(int(apr))
+
+
+main()
