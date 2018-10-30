@@ -1,0 +1,39 @@
+# U02_Ex04_Convert_5_Temps.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 10 Oct 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 04
+#     Source: Python Programing
+#    Chapter: 2
+#
+# Program Description
+#   This program coverts 5 different temperatures from Celsius to Fahrenheit.
+#
+# Algorithm (pseudocode)
+# Print program intro.
+# Print top of table
+# for i in range+ if statements
+# Set celsius = i
+# make the for loop contain 5 temperatures
+# Process the input  fahrenheit = 9 / 5 * celsius + 32
+# Print output table of 5 C to F values
+#
+
+
+def main():
+    print("This program produces a table of five degrees from Celsius to degrees Fahrenheit.")
+    print(" ")
+    print("Celsius|Fahrenheit")
+    print("-------|----------")
+    for i in range(5):
+            celsius = i
+            fahrenheit = 9 / 5 * celsius + 32
+            print('    {} | {:>.2f}'.format(celsius, fahrenheit))
+
+
+main()
