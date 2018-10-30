@@ -1,0 +1,39 @@
+# U03_Test02_Derivative.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 27 Sep 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 6
+#     Source: Python Programing
+#    Chapter: 3
+#
+# Program Description
+# finds the slope at a point given the equation
+#
+#
+#
+# Algorithm (pseudocode)
+# n(input)X^n-1
+# get power of x
+# get what x is multiplied by
+# print slope of line
+# ask for x-value
+# calculate the y-value at that point
+# Print Output
+
+
+def main():
+    p = (eval(input("What is x to the power of?")))
+    d = int(p-1)
+    m = (eval(input("What is x multiplied by?")))
+    fm = int(p*m)
+    print('{}x^{}'.format(fm,d))
+    x = int(input("What is the value of x?"))
+    print(fm*(x**d))
+
+
+main()
