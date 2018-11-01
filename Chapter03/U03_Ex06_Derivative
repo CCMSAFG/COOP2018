@@ -1,4 +1,4 @@
-# U03_Test02_Derivative.py
+# U03_Ex06_Derivative.py
 #
 #  Author: Jake
 #  Course: Coding for OOP
@@ -12,7 +12,7 @@
 #    Chapter: 3
 #
 # Program Description
-# finds the slope at a point given the equation
+# finds the slope and tKhe y-value at a point given the equation
 #
 #
 #
@@ -31,8 +31,9 @@ def main():
     d = int(p-1)
     m = (eval(input("What is x multiplied by?")))
     fm = int(p*m)
-    print('{}x^{}'.format(fm,d))
+    print('{}x^{} is the slope of this line'.format(fm,d))
     x = int(input("What is the value of x?"))
+    print("The y-value of this equation when x =", x,"is")
     print(fm*(x**d))
 
 
