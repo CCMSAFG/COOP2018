@@ -7,22 +7,22 @@
 #     IDE: PyCharm
 #
 # Assignment Info
-#   Exercise:
+#   Exercise: 10
 #     Source: Python Programing
-#    Chapter:
+#    Chapter: 3
 #
 # Program Description
-#
-#
-#
+# this program finds the height of the ladder given the
+# height of the wall and the angle of the ladder using
+# the value of sine.
 #
 # Algorithm (pseudocode)
 # import math
 # ask for h
-# ask for angle
+# ask for angle of the ladder
 # transfer form radians to degrees
-# h / (math.sin(degrees))
-# print conclusion
+# divide height by the degree times sine ( h / (math.sin(degrees))
+# print conclusion with the value of the length of the ladder.
 
 
 def main():
@@ -30,8 +30,8 @@ def main():
     h = int(input("What is the height of the wall?"))
     angle = int(input("What is the angle of the ladder?"))
     degrees = angle*(math.pi / 180)
-    l = h / (math.sin(degrees))
-    print('The ladder needs to be {:>.4f} units large'.format(l))
+    length = h / (math.sin(degrees))
+    print('The ladder needs to be {:>.4f} units large'.format(length))
 
 
 main()
