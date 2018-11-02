@@ -18,7 +18,7 @@
 #
 # Algorithm (pseudocode)
 # import math
-# ask for h
+# ask for height
 # ask for angle of the ladder
 # transfer form radians to degrees
 # divide height by the degree times sine ( h / (math.sin(degrees))
