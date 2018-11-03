@@ -1,0 +1,68 @@
+# U04_Ex01_SquareCode.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 22 Oct 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 01
+#     Source: Python Programing
+#    Chapter: 4
+#
+# Program Description
+# This program allows the user to draw 10 squares based off
+# of where they click in the window using a graphics folder
+# and a for loop.
+#
+# Algorithm (pseudocode)
+# Import graphics library
+# Create a GraphWin
+# Create intro near the middle that un-draws after a single click
+# set initial top left corner of square as variable (p1)
+# set bottom right corner in terms of p1 (p2)
+# define square as a rectangle
+# set fill and outline red and draw the square
+# for loop to draw squares based on where the mouse clicks on the window
+# clone the square for each click (10 times)
+# conclusion statement that closes the window after the window is clicked one final time.
+
+from graphics import *
+
+
+def main():
+    win = GraphWin("Square Draw", 1280, 720)
+
+    intro = Text(Point(600, 300),"This program allows you to place 10 30x30 red squares."
+                                 "\ndraw each square by clicking on the window."
+                                 "\nTo remove this message left click on the window.")
+    intro.setSize(25)
+    intro.draw(win)
+    win.getMouse()
+    intro.undraw()
+
+    p1 = Point(0, 0)
+    p2 = Point(p1.getX() - 30, p1.getY() - 30)
+    square = Rectangle(p1, p2)
+    square.setOutline("red")
+    square.setFill("red")
+    square.draw(win)
+
+    for i in range(10):
+        p = win.getMouse()
+        center = square.getCenter()
+        dx = p.getX() - center.getX()
+        dy = p.getY() - center.getY()
+        clone = square.clone()
+        clone.move(dx, dy)
+        clone.draw(win)
+
+    conc = Text(Point(600, 300), "Click again to quit")
+    conc.setSize(25)
+    conc.draw(win)
+    win.getMouse()
+    win.close()
+
+
+main()
