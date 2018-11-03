@@ -1,0 +1,74 @@
+# U04_Ex03_FaceMaker.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 29 Oct 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 03
+#     Source: Python Programing
+#    Chapter: 4
+#
+# Program Description
+# This program produces a graphic of a face
+#
+#
+#
+# Algorithm (pseudocode)
+# import graphics
+# make window
+# draw face using a make_circle definition
+# draw eyes using make_circle definition
+# make nose out of an angled line with negative slope and one with a slope of 0
+# draw mouth using an oval and a rectangle covering the top half og the oval to
+# create the illusion of an arc
+# allow the user to exit the program using an input statement
+
+from graphics import *
+
+
+def main():
+    win = GraphWin("Face", 800,800)
+    make_circle(Point(400, 400), 350, "yellow").draw(win)
+    make_circle(Point(260, 300), 50, "black").draw(win)
+    make_circle(Point(540, 300), 50, "black").draw(win)
+    draw_nose(win)
+    draw_mouth(win)
+    make_rect(Point(250, 570), Point(550, 625)).draw(win)
+    input("Press ENTER to exit.")
+    win.close()
+
+
+def make_circle(c, r, color):
+    circ = Circle(c, r)
+    circ.setOutline("black")
+    circ.setFill(color)
+    return circ
+
+
+def draw_nose(win):
+
+    line1 = Line(Point(375, 375), Point(475, 475))
+    line2 = Line(Point(375, 475), Point(475, 475))
+    line1.setWidth(5)
+    line2.setWidth(5)
+    line1.draw(win)
+    line2.draw(win)
+
+
+def draw_mouth(win):
+    oval = Oval(Point(250, 575), Point(550, 675))
+    oval.setWidth(5)
+    oval.draw(win)
+
+
+def make_rect(p1, p2):
+    rect = Rectangle(p1, p2)
+    rect.setFill("yellow")
+    rect.setOutline("yellow")
+    return rect
+
+
+main()
