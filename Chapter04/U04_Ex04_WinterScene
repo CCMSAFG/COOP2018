@@ -1,0 +1,209 @@
+# U04_Ex04_WinterScene.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 04 Nov 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 04
+#     Source: Python Programing
+#    Chapter:4
+#
+# Program Description
+# this program draws a winter scene and includes a snowman and a tree
+#
+#
+#
+# Algorithm (pseudocode)
+# import graphics
+# make sky and snow
+# make arms
+# make the body (three circles half overlapping)
+# add eyes and buttons (5 large black dots 2 on head 3 on middle circle)
+# make carrot nose (orange triangle)
+# make smile (5 small black dots in an arc)
+# make tree trunk
+# make 3 layers of leaves using triangles
+# make exit prompt
+#
+#
+from graphics import *
+
+
+def main():
+    win = GraphWin("Square Draw", 1280, 720)
+    make_rect(Point(0, 480), Point(1280, 720), "white").draw(win)
+    make_rect(Point(0, 0), Point(1280, 480), "Midnight Blue").draw(win)
+
+    make_arms(win)
+    make_man(win)
+    make_largecharc(win)
+    make_tri(Point(695, 445), Point(695, 450), Point(730, 447), "orange").draw(win)
+    make_smile(win)
+    make_tree(win)
+
+    conc = Text(Point(1000, 600), "Click to quit")
+    conc.setSize(25)
+    conc.draw(win)
+    win.getMouse()
+    win.close()
+
+
+def make_tree(win):
+    """
+    groups the trunk and 3 leaves to create a tree
+    :param win:
+    :return:
+    """
+    trunk = make_rect(Point(320, 270), Point(270, 550), "Saddle Brown")
+    leaf_one = make_tri(Point(140, 430), Point(440, 430), Point(295, 210), "Green")
+    leaf_two = make_tri(Point(170, 360), Point(410, 360), Point(295, 140), "Green")
+    leaf_three = make_tri(Point(200, 290), Point(390, 290), Point(295, 70), "Green")
+    trunk.draw(win)
+    leaf_one.draw(win)
+    leaf_two.draw(win)
+    leaf_three.draw(win)
+
+
+def make_rect(p1, p2, color):
+    """
+    this def makes a rectangle for the background, sky, and the trunk
+    :param p1:
+    :param p2:
+    :param color: input
+    :return:
+    """
+    rect = Rectangle(p1, p2)
+    rect.setFill(color)
+    rect.setOutline("black")
+    return rect
+
+
+def make_tri(p1, p2, p3, color):
+    """
+    this def makes a triangle for the nose and later hte leaves on the tree.
+    :param color: input color
+    :return:
+    """
+    tri = Polygon(p1, p2, p3)
+    tri.setFill(color)
+    tri.setOutline("black")
+    return tri
+
+
+def make_man(win):
+    """
+    groups the make_body functions into one command
+    :param win: puts it into window
+    :return:
+    """
+    bot = make_body(Point(700, 600), 80)
+    mid = make_body(Point(700, 510), 55)
+    top = make_body(Point(700, 445), 38)
+    bot.draw(win)
+    mid.draw(win)
+    top.draw(win)
+
+
+def make_body(c, r,):
+    """
+    this function makes the circles for the body
+    :param c: center
+    :param r: radius
+    :return:
+    """
+    body = Circle(c, r)
+    body.setOutline("black")
+    body.setFill("White Smoke")
+    return body
+
+
+def make_mouth(c, r,):
+    """
+    this def makes the smaller charcoal bits to make the mouth
+    :param c: center
+    :param r: radius
+    :return:
+    """
+    mouth = Circle(c, r)
+    mouth.setOutline("black")
+    mouth.setFill("black")
+    return mouth
+
+
+def make_smile(win):
+    """
+    this def groups the small charcoal bits to create the smile
+    :param win:
+    :return:
+    """
+    bit_one = make_mouth(Point(680, 460), 3)
+    bit_two = make_mouth(Point(720, 460), 3)
+    bit_three = make_mouth(Point(688, 466), 3)
+    bit_four = make_mouth(Point(712, 466), 3)
+    bit_five = make_mouth(Point(700, 470), 3)
+    bit_one.draw(win)
+    bit_two.draw(win)
+    bit_three.draw(win)
+    bit_four.draw(win)
+    bit_five.draw(win)
+
+
+def make_charc(c, r,):
+    """
+    makes the larger charcoal bits for  eyes and buttons on middle body circle
+    :param c:
+    :param r:
+    :return:
+    """
+    charc = Circle(c, r)
+    charc.setOutline("black")
+    charc.setFill("black")
+    return charc
+
+
+def make_largecharc(win):
+    """
+    groups and makes both the eyes and buttons using the same large charcoal code
+    :param win:
+    :return:
+    """
+    eye_one = make_charc(Point(715, 435), 5)
+    eye_two = make_charc(Point(685, 435), 5)
+    button_one = make_charc(Point(700, 495), 5)
+    button_two = make_charc(Point(700, 515), 5)
+    button_three = make_charc(Point(700, 535), 5)
+    eye_one.draw(win)
+    eye_two.draw(win)
+    button_one.draw(win)
+    button_two.draw(win)
+    button_three.draw(win)
+
+
+def make_arm(p1, p2):
+    """
+    makes an arm of the snowman
+    :param p1:
+    :param p2:
+    :return:
+    """
+    arm = Line(p1, p2)
+    arm.setOutline("Saddle Brown")
+    return arm
+
+
+def make_arms(win):
+    """
+    groups and makes both arms of the snowman
+    :param win:
+    :return:
+    """
+    left_arm = make_arm(Point(670, 510), Point(560, 460))
+    right_arm = make_arm(Point(730, 510), Point(840, 460))
+    left_arm.draw(win)
+    right_arm.draw(win)
+
+
+main()
