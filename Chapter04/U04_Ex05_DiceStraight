@@ -1,0 +1,152 @@
+# U04_Ex05_DiceStraight.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 04 Nov 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 05
+#     Source: Python Programing
+#    Chapter: 4
+#
+# Program Description
+# This program creates an image of a straight using dice.
+#
+#
+#
+# Algorithm (pseudocode)
+# import graphics
+# make window and set coords
+# make each dice 7 coordinates by 7 coordinates with a 1x1 border around and between them
+# make def for the squares/dots on the die
+# place dots to be 1x1 coordinate square and have 1x1 coordinate square between each dot
+# group each die into a single def to clean up code
+# make background green by putting a rectangle covering the whole window in the beginning of the code
+
+from graphics import *
+
+
+def main():
+    win = GraphWin("Dice in a Straight", 1470, 270)
+    win.setCoords(0, 0, 49, 9)
+
+    make_rect(Point(0, 0), Point(49, 9)).draw(win)
+
+    make_die1(win)
+
+    make_die2(win)
+
+    make_die3(win)
+
+    make_die4(win)
+
+    make_die5(win)
+
+    make_die6(win)
+
+    print("Click the window to close it.")
+    win.getMouse()
+    win.close()
+
+
+def make_rect(p1, p2):
+    rect = Rectangle(p1, p2)
+    rect.setFill("Forest Green")
+    rect.setOutline("Black")
+    return rect
+
+
+def make_die1(win):
+    die = Rectangle(Point(1, 1), Point(8, 8))
+    die.setOutline("black")
+    die.setFill("white")
+    die.draw(win)
+    dot_1 = make_dot(Point(5, 5), Point(4, 4))
+    dot_1.draw(win)
+
+
+def make_die2(win):
+    die = Rectangle(Point(9, 1), Point(16, 8))
+    die.setOutline("black")
+    die.setFill("white")
+    die.draw(win)
+    dot_2 = make_dot(Point(11, 5), Point(10, 4))
+    dot_3 = make_dot(Point(14, 5), Point(15, 4))
+    dot_2.draw(win)
+    dot_3.draw(win)
+
+
+def make_die3(win):
+    die = Rectangle(Point(17, 1), Point(24, 8))
+    die.setOutline("black")
+    die.setFill("white")
+    die.draw(win)
+    dot_4 = make_dot(Point(18, 3), Point(19, 2))
+    dot_5 = make_dot(Point(20, 5), Point(21, 4))
+    dot_6 = make_dot(Point(22, 7), Point(23, 6))
+    dot_4.draw(win)
+    dot_5.draw(win)
+    dot_6.draw(win)
+
+
+def make_die4(win):
+    die = Rectangle(Point(25, 1), Point(32, 8))
+    die.setOutline("black")
+    die.setFill("white")
+    die.draw(win)
+    dot_7 = make_dot(Point(27, 7), Point(26, 6))
+    dot_8 = make_dot(Point(30, 7), Point(31, 6))
+    dot_9 = make_dot(Point(27, 2), Point(26, 3))
+    dot_10 = make_dot(Point(30, 2), Point(31, 3))
+    dot_7.draw(win)
+    dot_8.draw(win)
+    dot_9.draw(win)
+    dot_10.draw(win)
+
+
+def make_die5(win):
+    die = Rectangle(Point(33, 1), Point(40, 8))
+    die.setOutline("black")
+    die.setFill("white")
+    die.draw(win)
+    dot_11 = make_dot(Point(38, 7), Point(39, 6))
+    dot_12 = make_dot(Point(36, 5), Point(37, 4))
+    dot_13 = make_dot(Point(35, 2), Point(34, 3))
+    dot_14 = make_dot(Point(38, 2), Point(39, 3))
+    dot_15 = make_dot(Point(35, 7), Point(34, 6))
+    dot_11.draw(win)
+    dot_12.draw(win)
+    dot_13.draw(win)
+    dot_14.draw(win)
+    dot_15.draw(win)
+
+
+def make_die6(win):
+    die = Rectangle(Point(41, 1), Point(48, 8))
+    die.setOutline("black")
+    die.setFill("white")
+    die.draw(win)
+    dot_16 = make_dot(Point(43, 7), Point(42, 6))
+    dot_17 = make_dot(Point(46, 7), Point(47, 6))
+    dot_18 = make_dot(Point(43, 5), Point(42, 4))
+    dot_19 = make_dot(Point(46, 5), Point(47, 4))
+    dot_20 = make_dot(Point(43, 2), Point(42, 3))
+    dot_21 = make_dot(Point(46, 2), Point(47, 3))
+    dot_16.draw(win)
+    dot_17.draw(win)
+    dot_18.draw(win)
+    dot_19.draw(win)
+    dot_20.draw(win)
+    dot_21.draw(win)
+
+
+def make_dot(p1, p2):
+    dot = Rectangle(p1, p2)
+    dot.setOutline("black")
+    dot.setFill("black")
+    return dot
+
+
+main()
