@@ -1,0 +1,62 @@
+# U04_02_TargetGraphic.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 07 Nov 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 02
+#     Source: Python Programing
+#    Chapter: 4
+#
+# Program Description
+# This program will draw an archery target made of
+# a yellow circle surrounded by concentric rings of
+# red, blue, black, and white with each ring having the same width.
+#
+#
+#
+# Algorithm (pseudocode)
+# import graphics
+# make graph win
+# add intro and have a getMouse to undraw the text
+# make circle from outside in White Black Blue Red Yellow using a make_circle def
+# getMouse to close window
+#
+from graphics import *
+
+
+def main():
+
+    win = GraphWin("Target", 800, 800)
+
+    intro = Text(Point(400, 400),
+                 "This program will draw an archery target made of\n" +
+                 "a yellow circle surrounded by concentric rings of\n" +
+                 "red, blue, black, and white with each ring having the same width.\n" +
+                 "\n\nClick to begin.")
+    intro.setSize(20)
+    intro.draw(win)
+    win.getMouse()
+    intro.undraw()
+
+    make_circle(Point(400, 400), 400, "white").draw(win)
+    make_circle(Point(400, 400), 320, "black").draw(win)
+    make_circle(Point(400, 400), 240, "blue").draw(win)
+    make_circle(Point(400, 400), 160, "red").draw(win)
+    make_circle(Point(400, 400), 80, "yellow").draw(win)
+
+    win.getMouse()
+    win.close()
+
+
+def make_circle(c, r, color):
+    circ = Circle(c, r)
+    circ.setOutline("black")
+    circ.setFill(color)
+    return circ
+
+
+main()
