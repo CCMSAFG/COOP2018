@@ -15,8 +15,6 @@
 # this program takes 2 inputs from the user to
 # draw a line and prints the midpoint and length
 #
-#
-#
 # Algorithm (pseudocode)
 # import graphics
 # import math
