@@ -1,0 +1,119 @@
+# U04_Ex07_CIrcleIntersection.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 08 Nov 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 07
+#     Source: Python Programing
+#    Chapter: 4
+#
+# Program Description
+# this program gathers a users input to calculate the
+# intersecting points of a horizontal line
+# on a circle printed in the center of the screen
+# and prints those values.
+#
+# Algorithm (pseudocode)
+# import graphics
+# import math
+# make window
+# set coordinates from 30x22 with (0,0) in the middle
+# at entry and text to get and introduce y value of line (from -10 to 10)
+# make and number vertical axis
+# getMouse to begin calculation
+# input the users input into the y value of the line going fom the x values of (-10.5,10.5)
+# coordinate-x(cx) = square root of radius(10)^2 - y value of the input^2
+# print corresponding negative value (cxn)
+# click to close
+from graphics import *
+from math import *
+
+
+def main():
+
+    win = GraphWin("Circle Intersection", 1050, 770)
+    win.setCoords(-15, -11, 15, 11)
+
+    make_circ(Point(0, 0), 10, "orange red").draw(win)
+
+    y_value_text = Text(Point(-13, 1), "Enter y-value of\n"
+                                       " horizontal line")
+
+    draw_border(win)
+
+    Text(Point(-11, -10), ' -10').draw(win)
+    Text(Point(-11, -9), ' -9').draw(win)
+    Text(Point(-11, -8), ' -8').draw(win)
+    Text(Point(-11, -7), ' -7').draw(win)
+    Text(Point(-11, -6), ' -6').draw(win)
+    Text(Point(-11, -5), ' -5').draw(win)
+    Text(Point(-11, -4), ' -4').draw(win)
+    Text(Point(-11, -3), ' -3').draw(win)
+    Text(Point(-11, -2), ' -2').draw(win)
+    Text(Point(-11, -1), ' -1').draw(win)
+    Text(Point(-11, 0), ' 0').draw(win)
+    Text(Point(-11, 1), ' 1').draw(win)
+    Text(Point(-11, 2), ' 2').draw(win)
+    Text(Point(-11, 3), ' 3').draw(win)
+    Text(Point(-11, 4), ' 4').draw(win)
+    Text(Point(-11, 5), ' 5').draw(win)
+    Text(Point(-11, 6), ' 6').draw(win)
+    Text(Point(-11, 7), ' 7').draw(win)
+    Text(Point(-11, 8), ' 8').draw(win)
+    Text(Point(-11, 9), ' 9').draw(win)
+    Text(Point(-11, 10), '10').draw(win)
+
+    y_value_text.draw(win)
+    y_value = Entry(Point(-13, 0), 3)
+    y_value.setText("0.0")
+    y_value.draw(win)
+
+    win.getMouse()
+
+    y_value_input = float(y_value.getText())
+
+    line_y = Line(Point(-10.5, y_value_input), Point(10.5, y_value_input))
+    line_y.draw(win)
+
+    make_coord1 = make_circ(Point(sqrt(100 - (y_value_input**2)), y_value_input,), .1, "blue")
+    make_coord2 = make_circ(Point(-(sqrt(100 - (y_value_input**2))), y_value_input,), .1, "blue")
+
+    make_coord1.draw(win)
+    make_coord2.draw(win)
+
+    cx = float(sqrt(100 - (y_value_input ** 2)))
+    cxn = float(-sqrt(100 - (y_value_input ** 2)))
+    x_value_text = Text(Point(-13, -1.5), "The x values "
+                                          "\nof the intersecting "
+                                          "\npoints are: ")
+    x_value_text_two = Text(Point(-13, -2.5), ('{:>.2f} and {:>.2f}'.format(cx, cxn)))
+
+    x_value_text.draw(win)
+    x_value_text_two.draw(win)
+
+    click_to_exit = Text(Point(-13, 3), "Click the "
+                                        "\nwindow to exit")
+    click_to_exit.draw(win)
+
+    win.getMouse()
+    win.close()
+
+
+def make_circ(c, r, color):
+    circ = Circle(c, r)
+    circ.setOutline("black")
+    circ.setFill(color)
+    return circ
+
+
+def draw_border(win):
+    line1 = Line(Point(-10.5, 10.5), Point(-10.5, -10.5))
+    line1.setWidth(3)
+    line1.draw(win)
+
+
+main()
