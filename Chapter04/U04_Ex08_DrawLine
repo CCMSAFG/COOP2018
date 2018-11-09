@@ -1,0 +1,89 @@
+# U04_Ex08_DrawLine.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 08 Nov 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 08
+#     Source: Python Programing
+#    Chapter: 4
+#
+# Program Description
+# this program takes 2 inputs from the user to
+# draw a line and prints the midpoint and length
+#
+#
+#
+# Algorithm (pseudocode)
+# import graphics
+# import math
+# make window
+# click to start prompt
+# gather x and y values of the users beginning (b) click and draw point
+# gather x and y values of the users ending (e) click and draw point
+# make line connecting the two points
+# dx = beginning x-value - ending x-value
+# dy = beginning y-value - ending y-value
+# slope = -(change in y value / change in x value)
+# length = square root of change in y value^2 + change in x value^2
+# midpoint x (mpx) = 1/2 (ending x-value - beginning x-value) + beginning x-value
+# midpoint y (mpy) = 1/2 (ending y-value - beginning y-value) + beginning y-value
+# print values of slope and length
+# "click to close" prompt
+
+from graphics import *
+from math import *
+
+
+def main():
+
+    win = GraphWin("Circle Intersection", 1280, 720)
+
+    click_to_start = Text(Point(640, 60), "Click the window at two points to draw a line.")
+    click_to_start.draw(win)
+
+    b = win.getMouse()
+    first_circ = Circle(Point(b.getX(), b.getY()), 3)
+    first_circ.setFill("black")
+    first_circ.draw(win)
+
+    click_to_start.undraw()
+    click_to_continue = Text(Point(640, 60), "Click the window at one more point to finish the line.")
+    click_to_continue.draw(win)
+
+    e = win.getMouse()
+    second_circ = Circle(Point(e.getX(), e.getY()), 3)
+    second_circ.setFill("black")
+    second_circ.draw(win)
+
+    click_to_continue.undraw()
+
+    p1 = Point(b.getX(), b.getY())
+    p2 = Point(e.getX(), e.getY())
+    Line(p1, p2).draw(win)
+
+    dx = b.getX() - e.getX()
+    dy = b.getY() - e.getY()
+    slope = -(dy / dx)
+    length = sqrt((dy**2)+(dx**2))
+    mpx = (1/2) * (e.getX() - b.getX()) + b.getX()
+    mpy = (1/2) * (e.getY() - b.getY()) + b.getY()
+
+    midpoint_circ = Circle(Point(mpx, mpy), 5)
+    midpoint_circ.setFill("cyan")
+    midpoint_circ.draw(win)
+    mpt = Text(Point(640, 40), ('Your line has a midpoint of ({:>.0f},{:>.0f})'.format(mpx, mpy)))
+    mpt.draw(win)
+    conclusion = Text(Point(640, 20), ('Your line has a slope of {:>.2f} and a length of {:>.0f} pixels'.format(slope, length)))
+    conclusion.draw(win)
+    click_to_exit = Text(Point(640, 60), "Click the window to exit")
+    click_to_exit.draw(win)
+
+    win.getMouse()
+    win.close()
+
+
+main()

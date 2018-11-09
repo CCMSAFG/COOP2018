@@ -1,0 +1,84 @@
+# U04_Ex09_RectangleDraw.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 09 Nov 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 09
+#     Source: Python Programing
+#    Chapter: 4
+#
+# Program Description
+# this program takes 2 inputs from the user to
+# draw a rectangle and prints the area and perimeter
+#
+#
+#
+# Algorithm (pseudocode)
+# import graphics
+# import math
+# make window
+# click to start prompt
+# gather x and y values of the users beginning (b) click and draw point
+# gather x and y values of the users ending (e) click and draw point
+# make rectangle using the two points (opposite corners)
+# dx = beginning x-value - ending x-value
+# dy = beginning y-value - ending y-value
+# area = absolute value of the change in x value * change in y value
+# perimeter (per) = 2(change in x value + change in y value)
+# print values of area and perimeter
+# "click to close" prompt
+
+from graphics import *
+
+
+def main():
+
+    win = GraphWin("Rectangle Draw", 1280, 720)
+    win.setBackground("powder blue")
+
+    click_to_start = Text(Point(640, 60), "Click the window at two points to draw a rectangle.")
+    click_to_start.draw(win)
+
+    b = win.getMouse()
+    first_circ = Circle(Point(b.getX(), b.getY()), 2)
+    first_circ.setFill("black")
+    first_circ.draw(win)
+
+    click_to_start.undraw()
+    click_to_continue = Text(Point(640, 60), "Click the window at one more point to make the opposite corner.")
+    click_to_continue.draw(win)
+
+    e = win.getMouse()
+    second_circ = Circle(Point(e.getX(), e.getY()), 2)
+    second_circ.setFill("black")
+    second_circ.draw(win)
+
+    click_to_continue.undraw()
+
+    p1 = Point(b.getX(), b.getY())
+    p2 = Point(e.getX(), e.getY())
+    rect = Rectangle(p1, p2,)
+    rect.setFill("deep pink")
+    rect.draw(win)
+
+    dx = b.getX() - e.getX()
+    dy = b.getY() - e.getY()
+    area = abs(dy * dx)
+    per = abs((dy*2)+(dx*2))
+
+    mpt = Text(Point(640, 40), ('Your rectangle has an area of {:>.0f} pixels squared.'.format(area)))
+    mpt.draw(win)
+    conclusion = Text(Point(640, 20), ('Your rectangle has a perimeter of {:>.0f} pixels'.format(per)))
+    conclusion.draw(win)
+    click_to_exit = Text(Point(640, 60), "Click the window to exit")
+    click_to_exit.draw(win)
+
+    win.getMouse()
+    win.close()
+
+
+main()

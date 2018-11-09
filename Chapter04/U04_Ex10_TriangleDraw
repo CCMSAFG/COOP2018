@@ -1,0 +1,113 @@
+# U04_Ex10_TriangleDraw.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 09 Nov 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 10
+#     Source: Python Programing
+#    Chapter: 4
+#
+# Program Description
+# this program takes 3 inputs from the user to
+# draw a triangle and prints the area and perimeter
+#
+#
+#
+# Algorithm (pseudocode)
+# import graphics
+# import math
+# make window
+# click to start prompt
+# gather x and y values of the users first (b) click and draw point
+# gather x and y values of the users second (a) click and draw point
+# gather x and y values of the users third (c) click and draw point
+# make triangle using the three points
+# change of x-value of line b,a (bax) =  absolute value of point b x-value - point a x-value
+# change of y-value of line b,a (bay) =  absolute value of point b y-value - point a y-value
+# change of x-value of line b,c (bcx) =  absolute value of point b x-value - point c x-value
+# change of y-value of line b,c (bcy) =  absolute value of point b y-value - point c y-value
+# change of x-value of line c,a (cax) =  absolute value of point c x-value - point a x-value
+# change of y-value of line c,a (cay) =  absolute value of point c y-value - point a y-value
+# length of line a,b (lengthba) = square root of bax^2 + bay^2
+# length of line b,c (lengthbc) = square root of bcx^2 + bcy^2
+# length of line c,a (lengthca) = square root of cax^2 + cay^2
+# semiperimeter (s) = (lengthab + lengthbc + lengthca) / 2
+# area = square root of (s)(s - lengthab)(s - lengthbc)(s - lengthca)
+# perimeter (per) = lengthca + lengthbc + lengthab
+# print values of area and perimeter
+# "click to close" prompt
+
+from graphics import *
+from math import *
+
+
+def main():
+
+    win = GraphWin("Triangle Draw", 1280, 720)
+    win.setBackground("powder blue")
+
+    click_to_start = Text(Point(640, 60), "Click the window at three points to draw a triangle.")
+    click_to_start.draw(win)
+
+    b = win.getMouse()
+    first_circ = Circle(Point(b.getX(), b.getY()), 2)
+    first_circ.setFill("black")
+    first_circ.draw(win)
+
+    click_to_start.undraw()
+    click_to_continue = Text(Point(640, 60), "Click the window another point to plot a second vertex.")
+    click_to_continue.draw(win)
+
+    a = win.getMouse()
+    second_circ = Circle(Point(a.getX(), a.getY()), 2)
+    second_circ.setFill("black")
+    second_circ.draw(win)
+
+    click_to_continue.undraw()
+    click_to_finalize = Text(Point(640, 60), "Click the window at one more point to finalize the triangle.")
+    click_to_finalize.draw(win)
+
+    c = win.getMouse()
+    third_circ = Circle(Point(c.getX(), c.getY()), 2)
+    third_circ.setFill("black")
+    third_circ.draw(win)
+
+    click_to_finalize.undraw()
+
+    p1 = Point(b.getX(), b.getY())
+    p2 = Point(a.getX(), a.getY())
+    p3 = Point(c.getX(), c.getY())
+    tri = Polygon(p1, p2, p3)
+    tri.setFill("lime")
+    tri.setOutline("black")
+    tri.draw(win)
+
+    bax = abs(b.getX() - a.getX())
+    bay = abs(b.getY() - a.getY())
+    bcx = abs(b.getX() - c.getX())
+    bcy = abs(b.getY() - c.getY())
+    cax = abs(c.getX() - a.getX())
+    cay = abs(c.getY() - a.getY())
+    lengthab = sqrt((bax ** 2) + (bay ** 2))
+    lengthbc = sqrt((bcx ** 2) + (bcy ** 2))
+    lengthca = sqrt((cax ** 2) + (cay ** 2))
+    s = (lengthab + lengthbc + lengthca) /2
+    area = sqrt(s * (s - lengthab) * (s - lengthbc) * (s - lengthca))
+    per = lengthca + lengthbc + lengthab
+
+    mpt = Text(Point(640, 40), ('Your rectangle has an area of {:>.0f} pixels squared.'.format(area)))
+    mpt.draw(win)
+    conclusion = Text(Point(640, 20), ('Your rectangle has a perimeter of {:>.0f} pixels'.format(per)))
+    conclusion.draw(win)
+    click_to_exit = Text(Point(640, 60), "Click the window to exit")
+    click_to_exit.draw(win)
+
+    win.getMouse()
+    win.close()
+
+
+main()
