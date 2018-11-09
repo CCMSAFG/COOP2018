@@ -15,8 +15,6 @@
 # this program takes 3 inputs from the user to
 # draw a triangle and prints the area and perimeter
 #
-#
-#
 # Algorithm (pseudocode)
 # import graphics
 # import math
