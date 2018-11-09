@@ -28,7 +28,7 @@
 # area = absolute value of the change in x value * change in y value
 # perimeter (per) = 2(change in x value + change in y value)
 # print values of area and perimeter
-# "click to close" prompt
+# "click to close" prompt text
 
 from graphics import *
 
