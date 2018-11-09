@@ -15,8 +15,6 @@
 # this program takes 2 inputs from the user to
 # draw a rectangle and prints the area and perimeter
 #
-#
-#
 # Algorithm (pseudocode)
 # import graphics
 # import math
