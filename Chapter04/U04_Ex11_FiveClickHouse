@@ -1,0 +1,159 @@
+# U04_Ex11_FiveClickHouse.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 09 Nov 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 11
+#     Source: Python Programing
+#    Chapter: 4
+#
+# Program Description
+# This program allows the user to build a house in five clicks.
+# First two clicks: Makes a rectangular frame with each click being a corner
+# Third click: Places a door 1/5 of the house's frame
+# Fourth click: Draws a window around the point you clicked
+# Fifth click: Makes the point you clicked the peak of the roof
+#
+# Algorithm (pseudocode)
+# import graphics
+# make win
+# set coords
+# make intro
+# getMouse
+# undraw intro
+# make ground
+# make sky
+# make sun
+# add instruction (click twice) to make frame
+# mark clicks
+# use points to make rectangle
+# add instruction
+# make door using click
+# add instruction
+# make window around click coordinates
+# add instruction
+# make triangle to make roof
+# (first point = click5, second point = click1, third point =(click2 x-value), click1 y-value))
+# add conclusion
+# win.getMouse
+# win.close
+
+from graphics import *
+
+
+def main():
+    width, height = 900, 600
+    win = GraphWin("5-Click House", width, height)
+    win.setCoords(-15, -10, 15, 10)
+
+    intro = make_intro(0, 0, 12)
+    intro.draw(win)
+
+    win.getMouse()
+    intro.undraw()
+
+    border_ground = Rectangle(Point(-15, -4), Point(15, -10))
+    border_ground.setFill("yellow green")
+    border_ground.draw(win)
+
+    border_sky = Rectangle(Point(-15, -4), Point(15, 8))
+    border_sky.setFill("sky blue")
+    border_sky.draw(win)
+
+    sun = Circle(Point(12, 5), 2)
+    sun.setOutline("black")
+    sun.setFill("Yellow")
+    sun.draw(win)
+
+    instruction = Text(Point(0, 9), "click to place top left corner of frame")
+    instruction.draw(win)
+
+    click1 = win.getMouse()
+
+    click1x = click1.getX()
+    click1y = click1.getY()
+    click1.draw(win)
+
+    instruction.setText("click to place bottom right corner of frame")
+
+    click2 = win.getMouse()
+
+    click2x = click2.getX()
+    click2y = click2.getY()
+    click2.draw(win)
+
+    base = Rectangle(click1, click2).draw(win)
+    base.setFill("tan")
+    click1.undraw()
+    click2.undraw()
+
+    instruction.setText("click inside the frame to place"
+                        "\nthe center of top edge of door")
+
+    click3 = win.getMouse()
+    door_width = 1 / 5 * abs(click2x - click1x)
+
+    door_length = click3.clone()
+    door_length.move(-1/2 * door_width, 0)
+
+    door_height = click3.clone()
+    door_height.move(1/2 * door_width, click2y - click3.getY())
+
+    door = Rectangle(door_length, door_height)
+    door.setFill("peru")
+    door.draw(win)
+    instruction.setText("click inside the frame to draw "
+                        "\na window around that point")
+
+    click4 = win.getMouse()
+
+    window_width = 1/2 * door_width
+
+    window_point1 = click4.clone()
+    window_point1.move(-1/2 * window_width, 1/2 * window_width)
+
+    window_point2 = click4.clone()
+    window_point2.move(1/2 * window_width, -1/2 * window_width)
+
+    window = Rectangle(window_point1, window_point2)
+    window.setFill("light blue")
+    window.draw(win)
+
+    instruction.setText("click above the frame to place peak of roof.")
+
+    click5 = win.getMouse()
+
+    instruction.undraw()
+
+    roof = Polygon(click5, click1, Point(click2.getX(), click1y))
+    roof.setFill("saddle brown")
+    roof.setOutline("black")
+    roof.draw(win)
+
+    conc = Text(Point(0, 9), "Click the window to exit")
+    conc.draw(win)
+
+    win.getMouse()
+    win.close()
+
+
+def make_intro(x, y, size):
+    """
+    this def makes the opening statement which gives instructions
+    """
+    intro = Text(Point(x, y),
+                 "This program allows the user to build a house in five clicks.\n\n"
+                 "First two clicks: Makes a rectangular frame with each click being a corner\n\n" +
+                 "Third click: Places a door 1/5 of the house's frame\n\n" +
+                 "Fourth click: Draws a window around the point you clicked\n\n" +
+                 "Fifth click: Makes the point you clicked the peak of the roof\n\n"
+                 "Click window to begin")
+    intro.setSize(size)
+    return intro
+
+
+main()
