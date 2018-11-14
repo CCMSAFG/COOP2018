@@ -1,0 +1,71 @@
+# Exercise_56.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 14 Nov 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#  Trimester 1 Exam
+#
+# Program Description
+# This program determines if a triangle can be made given three side lengths
+#
+#
+#
+# Algorithm (pseudocode)
+# make variables a, b, and c global
+# gather inputs for side lengths
+# create is_triangle function
+#         if a + b <= c:
+#         answer = False
+#         return answer
+#     elif b + c <= a:
+#         answer = False
+#         return answer
+#     elif c + a <= b:
+#         answer = False
+#         return answer
+#     else:
+#         answer = True
+#         return answer
+# set answer to the function
+# add an if statement to determine if answer is true or false
+# add two concluding messages with the side lengths based on if the thing is true or false
+#
+# insert concluding statement
+
+
+def main():
+    print("This program determines if a triangle can be made given three side lengths")
+
+    a = eval(input("What is the value of a?"))
+    b = eval(input("What is the value of b?"))
+    c = eval(input("What is the value of c?"))
+
+    is_triangle(a, b, c)
+    answer = is_triangle(a, b, c)
+    if answer is True:
+        print('These combinations of side lengths({}, {}, {})can produce a triangle'.format(a, b, c))
+    else:
+        print('These combinations of side lengths ({}, {}, {}) can not produce a triangle'.format(a, b, c))
+
+
+def is_triangle(a, b, c):
+    if a + b <= c:
+        answer = False
+        return answer
+    elif b + c <= a:
+        answer = False
+        return answer
+    elif c + a <= b:
+        answer = False
+        return answer
+    else:
+        answer = True
+        return answer
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,32 @@
+Algorithm:
+Make values of a, b, c, and n global so you can use it in the check_fermat function
+    #global a
+    #global b
+    #global c
+    #global n
+Develop check_fermat
+    #def check_fermat():
+    Make an if statement to see if Fermat's Last Theorem is true
+        #if (a**n) + (b**n) == c**n
+    Print the statement "Holy smokes, Fermat was wrong!" if the equation is equal.
+        #(print("Holy smokes, Fermat was wrong!"))
+    Make else statement
+        #else
+    Print the statement"No, that does not work." if the value of an + bn does not equal cn
+        #print("No, that does not work.")
+Develop main function
+    #def main():
+    Add introduction
+        # print("This program tests Fermat's Final Formula (a^n + b^n can not equal c^n if n is greater than 2)")
+    Ask for input of a and set it to the global variable a
+        # a = eval(input("What is the value of a?"))
+    Ask for input of b and set it to the global variable b
+        #b = eval(input("What is the value of b?"))
+    Ask for input of c and set it to the global variable c
+        #c = eval(input("What is the value of c?"))
+    Ask for input of n and set it to the global variable n
+        #n = eval(input("What is the value of n? The value of n must be greater than 2."))
+    Call back to the check_fermat function
+        #check_fermat()
+    end main function
+        #main()
