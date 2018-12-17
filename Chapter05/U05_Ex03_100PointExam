@@ -1,0 +1,53 @@
+# U05_Ex03_100PointExam.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 29 Nov 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise:
+#     Source: Python Programing
+#    Chapter:
+#
+# Program Description
+#
+#
+#
+#
+# Algorithm (pseudocode)
+#
+#
+#
+#
+#
+
+#    A =[i for i in range(90, 101)]
+#    B =[i for i in range(80, 90)]
+#    C =[i for i in range(70, 80)]
+#    D =[i for i in range(60, 70)]
+#    F =[i for i in range(0, 60)]
+
+
+def main():
+
+    print("This program allows you to find the "
+          "\ncorresponding letter grade from an "
+          "\nexam grade ")
+
+    i = eval(input("Enter the exam grade of the student:"))
+
+    if i in range(90, 101):
+        print("The student's grade is an A.")
+    if i in range(80, 90):
+        print("The student's grade is a B")
+    if i in range(70, 80):
+        print("The student's grade is a C")
+    if i in range(60, 70):
+        print("The student's grade is a D")
+    if i in range(0, 60):
+        print("The student's grade is a F")
+
+
+main()

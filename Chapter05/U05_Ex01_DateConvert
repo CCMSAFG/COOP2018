@@ -1,0 +1,52 @@
+# U05_Ex01_DateConvert.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 29 Nov 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 01
+#     Source: Python Programing
+#    Chapter: 5
+#
+# Program Description
+# This prints out the number date and the
+# date when the month is text (January, February, etc.)
+#
+#
+# Algorithm (pseudocode)
+# Gain Day, Month, and Year input (numeric value)
+#
+# convert the int's into string as it is inputted into the
+# first date order (month/day/year)
+#
+# Using chunks of string of January through December separated
+# by comas, assign a variable to equal the int input of
+# "month" -1 as in a group of string, the first segment
+# is classified as 0 rather than 1
+#
+# Organize the second date configuration (TextMonth/day/year)
+#
+# Print both types of date configurations
+
+
+def main():
+    # get the day month and year as numbers
+    day = int(input("Enter the day number: "))
+    month = int(input("Enter the month number: "))
+    year = int(input("Enter the year: "))
+
+    date1 = str(month)+"/"+str(day)+"/"+str(year)
+
+    months = ["January", "February", "March", "April",
+              "May", "June", "July", "August",
+              "September", "October", "November", "December"]
+    monthStr = months[month-1]
+    date2 = monthStr+" " + str(day) + ", " + str(year)
+
+    print("The date is", date1, "or", date2+".")
+
+
+main()

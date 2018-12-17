@@ -1,0 +1,45 @@
+# U05_Ex04_AcronymGen.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 30 Nov 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 04
+#     Source: Python Programing
+#    Chapter: 5
+#
+# Program Description
+# Makes an acronym fro a phrase inputted by user
+#
+#
+#
+# Algorithm (pseudocode)
+# Get phrase input
+# convert to all uppercase
+# split into chunks based off of spaces
+# for loop
+# set variable (V_A) to the first character index 0
+# set variable(V_B) += V_A
+# after loop ends print V_B
+# print conclusion
+
+
+def main():
+
+    raw_phrase = input("Please enter phrase to become an acronym: ")
+    cap_phrase = raw_phrase.upper()
+    cap_phrase_chunks = cap_phrase.split()
+
+    acronym_final = ""
+    for chunk in cap_phrase_chunks:
+        first_char = (chunk[0])
+        first_char_str = str(first_char)
+        acronym = first_char_str
+        acronym_final += acronym
+    print("The acronym for", raw_phrase, "is", acronym_final+".")
+
+
+main()
