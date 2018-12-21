@@ -1,0 +1,61 @@
+# U05_Ex10_AvgWordLength.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 17 Dec 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 5
+#     Source: Python Programing
+#    Chapter: 10
+#
+# Program Description
+# This code finds the average word length of a sentence
+#
+#
+#
+# Algorithm (pseudocode)
+# Get sentence input
+# split string sentence
+# add str of all capital and lowercase letters
+# count number of spaces and add one to find number or words
+# for loop for all the words in the split list
+#      for loop for all the letters in the word
+#           check how many times that character(both cap ad lowercase)
+#           is in the letter list and add to a growing total
+#           (should be a value of 1 for each letter)
+# have a growing total for the letter value, word value, and sentence value
+# divide the sentence value by number of words and round that value to a whole number
+# conclusion
+#
+
+
+def main():
+    print("This code finds the average word length of a sentence.")
+    raw_sentence = input("Insert a sentence: ")
+    split_sentence = raw_sentence.split(" ")
+    letter_list = "abcdefghijklmnopqrstuvwxyz"
+    letter_list_caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    sentence_value = 0
+    space_number = raw_sentence.count(" ") + 1
+    for word in split_sentence:
+        word_value = 0
+        for letters in word:
+            whole_value = 0
+            whole_value_caps = 0
+            for character in letter_list_caps:
+                one_value = character.count(letters)
+                whole_value_caps = whole_value_caps + one_value
+            for character in letter_list:
+                one_value = character.count(letters)
+                whole_value = whole_value + one_value
+            word_value = word_value + whole_value + whole_value_caps
+        sentence_value = sentence_value + word_value
+    avg_letters = sentence_value / space_number
+    avg_letters_int = str(round(avg_letters))
+    print("The average number of letters per word is approximately", avg_letters_int+".")
+
+
+main()

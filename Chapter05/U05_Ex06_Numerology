@@ -1,0 +1,60 @@
+# U05_Ex06_Numerology.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 07 Dec 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise:
+#     Source: Python Programing
+#    Chapter:
+#
+# Program Description
+#
+#
+#
+#
+# Algorithm (pseudocode)
+#
+#
+#
+#
+#
+
+
+def main():
+
+    full_name = input("Please insert a full name:")
+    full_name_lower = full_name.lower()
+    full_name_lower += ' X'
+    name_chunks = full_name_lower.split(" ")
+    prev_word = 0
+    value_accumulation = 0
+    for chunk in name_chunks:
+        words = full_name_lower.find(chunk)
+        word_index_format = words - 1
+        parameter = full_name_lower[prev_word: word_index_format]
+        prev_word = words
+        if word_index_format <= -1:
+            continue
+        else:
+            value_accumulation += word(parameter)
+    print('The numeric value of {} is {}.'.format(full_name, value_accumulation))
+
+
+def word(x):
+
+    name_lower = x
+    letters = "Xabcdefghijklmnopqrstuvwxyz"
+    name_value = 0
+    for char in name_lower:
+        letter_value = letters.index(char)
+        letter_value_int = int(letter_value)
+        name_value = name_value + letter_value_int
+
+    return name_value
+
+
+main()

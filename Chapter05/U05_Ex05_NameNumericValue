@@ -1,0 +1,42 @@
+# U05_Ex05_NameNumericValue.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 29 Nov 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise:
+#     Source: Python Programing
+#    Chapter:
+#
+# Program Description
+#
+#
+#
+#
+# Algorithm (pseudocode)
+#
+#
+#
+#
+#
+
+
+def main():
+
+    name = input("Please insert a name:")
+    name_lower = name.lower()
+    print(name)
+    letters = "Xabcdefghijklmnopqrstuvwxyz"
+    name_value = 0
+    for char in name_lower:
+        letter_value = letters.index(char)
+        letter_value_int = int(letter_value)
+        name_value = name_value + letter_value_int
+
+    print('The numeric value of {} is {}.'.format(name, name_value))
+
+
+main()
