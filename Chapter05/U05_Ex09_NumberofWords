@@ -1,0 +1,44 @@
+# U05_Ex10_NumberofWords.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 17 Dec 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 5
+#     Source: Python Programing
+#    Chapter: 09
+#
+# Program Description
+# This code finds the number of words in a sentence
+#
+#
+#
+# Algorithm (pseudocode)
+# Get sentence input
+# count number of spaces
+# add one to number of spaces (this is the number of words)
+# setup output with an "if" statement
+#   if the number of words is 1,
+#   then use singular form of words in that sentence
+#
+#   if the number of words is > 1,
+#   then use the plural form of words in that sentence
+
+
+def main():
+    print("This code finds the number of words in a sentence.")
+    raw_sentence = input("Insert a sentence with proper English grammar and syntax:")
+    raw_sentence_str = str(raw_sentence)
+    spaces = raw_sentence.count(" ")
+    num_of_words = str(spaces + 1)
+    num_of_words_int = int(num_of_words)
+    if num_of_words_int == 1:
+        print('The word,"'+raw_sentence_str, 'is a singular word.')
+    else:
+        print('The sentence,"' + raw_sentence_str + '" has', num_of_words, "words in it.")
+
+
+main()

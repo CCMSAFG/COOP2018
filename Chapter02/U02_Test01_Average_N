@@ -22,6 +22,8 @@
 #
 #
 #
+
+
 def main():
     num = int(input("How many numbers? "))
     total_sum: int = 0
@@ -31,6 +33,7 @@ def main():
             numbers = int(input('Enter any number : '))
             total_sum += numbers
             avg = total_sum / num
+            return avg
 
         print("Average is :", avg)
     except ValueError:
