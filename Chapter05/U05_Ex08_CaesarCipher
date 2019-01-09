@@ -1,0 +1,107 @@
+# U05_Ex08_CaesarCipher.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 04 Dec 2018
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 08
+#     Source: Python Programing
+#    Chapter: 5
+#
+# Program Description
+# This code encrypts a message using a Caesar Cipher
+# negating punctuation and capitals
+#
+#
+# Algorithm (pseudocode)
+# caesar(string, offset) ---> encrypted string
+# Insert Pre-Cipher Intro
+#
+#    CIPHER CODE STEPS
+#
+# 1. make a list of all lowercase letters in alphabetic order
+#    with a space in index 0 (going from 0-26)
+#
+# 2. gather input on how many letters to shift the phrase
+#    that will be inputted
+#
+# 3. get raw input (word, phrase, sentence, etc.)
+#    Then convert the input to all lowercase letters
+#    convert the string input into a list of individual
+#    letters ("test sentence" --> t, e, s, t, [Space], s, e, n, t, e, n, c, e)
+#
+# 4. use a for loop to check each letter in the list of input letters
+#    use .count to see if that character occurs in the alphabet or
+#    is a space, if not, skip that character.
+#
+# 5. use the character from step 3 being sent through the for loop
+#    in step 4, find what index that character is in the list of letters
+#    ( For example: [Space] -> 0, a -> 1, z -> 26, etc.)
+#
+# 6. after gathering that index number, add that number to the number
+#    collected in step 2 to find what the index of the new letter will
+#    be in regard to the letter list made in step 1.
+#
+# 7. using the number found in step 6, use an if statement to account
+#    for exceptions such as if the character is a [Space] or if the
+#    number from step 6 is greater than 26.
+#       - If the character is a [Space] the number found in step 6
+#         will be equal to the number in step 2, in that case
+#         make the corresponding index 0 so the [Space]
+#         remains a [Space]
+#
+#       - If the number found is greater than 26, then, since the letter
+#         list goes only from [0,26], subtract 26 from that number to
+#         find its corresponding index
+#           (Ex. y-index = 25 if shifted 7 the
+#            new index would be 32. 32-26=6
+#            therefore the final letter with
+#            index-6 would be the letter "f")
+#
+#       - For all sums for step 6 where it greater than 0 and
+#         greater/equal to 26, make that sum be equal to its
+#         final index.
+#
+# 8. make the final letter be the index number found in steps 6 and 7
+#    in the letter list (Ex. letter_list[final_index])
+#
+# 9. have the final ciphered text build onto itself with each round
+#    of the for loop made in step 4
+#    * DO NOT FORGET TO ACCUMULATE BEFORE THE FOR LOOP *
+#    print final ciphered text after the for loop is complete
+#
+
+
+def main():
+    print(input("This code encrypts text using a Caesar Cipher, enter anything to begin:"))
+    raw_sentence = input(str("Please enter a sentence you wish to be encoded:"))
+    letter_list = " abcdefghijklmnopqrstuvwxyz"
+    lower_sentence = raw_sentence.lower()
+    shift_number = eval(input("How many letters would you like to shift in the cipher?"))
+    lower_letters = list(lower_sentence)
+    final_cipher = ""
+    for letter in lower_letters:
+        condition_one = letter_list.count(letter)
+        if condition_one == 0:
+            continue
+        elif condition_one == 1:
+            letter_pos_o = 0
+            for character in letter_list:
+                    letter_pos_o = (letter_list.index(letter))
+            new_pos = letter_pos_o + shift_number
+            if new_pos == shift_number:
+                cipher_letter = letter_pos_o
+            elif new_pos <= 26:
+                cipher_letter = new_pos
+            else:
+                new_pos = new_pos - 26
+                cipher_letter = new_pos
+            final_letter = letter_list[cipher_letter]
+            final_cipher = "{}{}".format(final_cipher, final_letter)
+    print(final_cipher)
+
+
+main()
