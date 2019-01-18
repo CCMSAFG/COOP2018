@@ -81,6 +81,10 @@ def main():
     letter_list = " abcdefghijklmnopqrstuvwxyz"
     lower_sentence = raw_sentence.lower()
     shift_number = eval(input("How many letters would you like to shift in the cipher?"))
+    if shift_number < 0:
+        shift_number = 26 + shift_number
+    else:
+        shift_number = shift_number
     lower_letters = list(lower_sentence)
     final_cipher = ""
     for letter in lower_letters:
