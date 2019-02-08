@@ -17,28 +17,48 @@
 #
 #
 # Algorithm (pseudocode)
-# Get sentence input
-# count number of spaces
-# add one to number of spaces (this is the number of words)
-# setup output with an "if" statement
-#   if the number of words is 1,
-#   then use singular form of words in that sentence
-#
-#   if the number of words is > 1,
-#   then use the plural form of words in that sentence
+# - Get sentence input
+# - Split the input separating the "words" by spaces
+# - Make that split string into a list and count the number of
+#   elements in that list
+# - Test the raw input for letters using a for loop
+# - If there are no letters print a statement saying that
+# - If letters are in the string, set up an "if, elif, else"
+#   statement to print the corresponding results
+#   - If there is one word, say  something like,
+#     "your input _____ is a single word"
+#   - If there are multiple(x) words print something like,
+#     "Your input contains x words"
+#   - If it contains no words print something like,
+#     "Your input contains no words"
 
 
 def main():
     print("This code finds the number of words in a sentence.")
     raw_sentence = input("Insert a sentence with proper English grammar and syntax:")
+    print("")
     raw_sentence_str = str(raw_sentence)
-    spaces = raw_sentence.count(" ")
-    num_of_words = str(spaces + 1)
-    num_of_words_int = int(num_of_words)
-    if num_of_words_int == 1:
-        print('The word,"'+raw_sentence_str, 'is a singular word.')
+    raw_sentence_lower = raw_sentence.lower()
+    line_list = raw_sentence.split(" ")
+    total_word = len(list(line_list))
+    letter_list = "abcdefghijklmnopqrstuvwxyz"
+    total_letters = 0
+    for char in raw_sentence_lower:
+        x = letter_list.count(char)
+        total_letters = total_letters + x
+
+    if total_letters > 0:
+        if raw_sentence_str <= "":
+            print('Your input contains no words.')
+        elif total_word == 1:
+            print('Your word,'
+                  '\n"'+raw_sentence_str+'"'
+                  '\nYour input is a singular word.')
+        else:
+            print('"' + raw_sentence_str + '" '
+                  '\nYour input contains', total_word, "words in it.")
     else:
-        print('The sentence,"' + raw_sentence_str + '" has', num_of_words, "words in it.")
+        print('Your input contains no letters to form sentences or words.')
 
 
 main()
