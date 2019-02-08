@@ -7,21 +7,25 @@
 #     IDE: PyCharm
 #
 # Assignment Info
-#   Exercise:
+#   Exercise: 12
 #     Source: Python Programing
-#    Chapter:
+#    Chapter: 05
 #
 # Program Description
-#
-#
+# This Program is an updated and overall
+#   better version of Unit 2 Exercise 8
 #
 #
 # Algorithm (pseudocode)
-#
-#
-#
-#
-#
+# - Find percentage rate
+# - Get number of years from userK
+# - Get amount from user
+# - Convert the percentage rate into
+#   a decimal
+# - Format the top of a table
+# - Use a for loop to calculate the
+#   future value
+# -  Format conclusion
 
 
 def main():
