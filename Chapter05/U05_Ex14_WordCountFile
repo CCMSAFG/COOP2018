@@ -1,0 +1,102 @@
+# U05_Ex14_WordCountFile.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 29 Jan 2019
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 14
+#     Source: Python Programing
+#    Chapter: 05
+#
+# Program Description
+# Finds the character, word, and line count
+#   of a file provided by the user
+#
+#
+# Algorithm (pseudocode)
+# Have user input file name
+# open the file to be read
+# read the file
+#
+# CHARACTER COUNT:
+# - Set up a list of all characters
+# - Lower all letters in the
+#   opened file to shorten character
+#   list
+# - Set base value of characters to 0
+#   to accumulate
+# - Set up for loop  to test every aspect
+#   of the file to see if it is a
+#   character in the character list
+#
+# LINE COUNT:
+# - Set initial line count as 0
+# - Use a for loop inside a "with as"
+#   statement to count total lines
+#
+# PREP FOR WORD COUNT:
+# - Close the file
+# - Open the same file to read line
+#   by line
+#
+# WORD COUNT:
+# - Set initial word value to 0
+# - Using the value found for line
+#   count, set up for loop in range
+#   of that value.
+# - For every line, use the .readline()
+#   function
+# - Split the read line by spaces
+#   and turn that split function
+#   into a list
+# - Use len function to count the
+#   elements of the list
+# - Add previous loop value too current
+#   value until loops complete leaving
+#   the proper word count
+#
+# CONCLUSION
+# - Format character, word, and line count
+#
+
+
+def main():
+    print("This program finds the character count, word count, and line count")
+    print("of a text file provided by the user.")
+    file_input = input("\nPlease enter a proper text file name:")
+    infile = open(file_input, "r")
+    text_final = infile.read()
+    print(text_final)
+
+    letter_list = " abcdefghijklmnopqrstuvwxyz.,()[]1234567890"
+    ftl = text_final.lower()
+    total_char = 0
+    for letter in letter_list:
+        number_of_char = ftl.count(letter)
+        total_char = total_char + number_of_char
+
+    num_lines = 0
+    with open(file_input, 'r') as f:
+        for line in f:
+            num_lines += 1
+
+    infile.close()
+    infile_2 = open(file_input, "r")
+
+    total_word = 0
+    for i in range(num_lines):
+        line_read = infile_2.readline()
+        line_list = line_read.split(" ")
+        word_per_line = len(list(line_list))
+        total_word = total_word + word_per_line
+
+    print('\nStatistics for "{}":'.format(file_input))
+    print("Number of characters: {}".format(total_char))
+    print("Number of words:      {}".format(total_word))
+    print("Number of lines:      {}".format(num_lines))
+
+
+main()
