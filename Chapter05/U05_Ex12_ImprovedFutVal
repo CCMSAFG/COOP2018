@@ -1,0 +1,40 @@
+# U05_Ex12_ImprovedFutVal.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 28 Jan 2019
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise:
+#     Source: Python Programing
+#    Chapter:
+#
+# Program Description
+#
+#
+#
+#
+# Algorithm (pseudocode)
+#
+#
+#
+#
+#
+
+
+def main():
+    pr = eval(input("What is the percentage rate in percent?"))
+    years = eval(input("How many years will the amount be compounded?"))
+    amount = eval(input("What is the value of money being compounded?"))
+    ppr = (pr/100)
+    print("Year |  Value"
+          "\n-----|-----------")
+    for i in range(1, years + 1):
+        fut_val = amount * (1 + ppr)
+        amount = fut_val
+        print("{}.   |  ${:>.2f} ".format(i, fut_val))
+
+
+main()
