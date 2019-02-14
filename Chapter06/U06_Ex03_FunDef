@@ -1,0 +1,47 @@
+# U06_Ex03_FunDef.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 17 Jan 2019
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise:
+#     Source: Python Programing
+#    Chapter:
+#
+# Program Description
+#
+#
+#
+#
+# Algorithm (pseudocode)
+#
+#
+#
+#
+#
+
+
+def main():
+    import math
+    pi = math.pi
+    r = eval(input("What is the radius of the sphere?"))
+    units = (input("What is the unit of the sphere?"))
+    sphere_area(r, units, pi)
+    sphere_volume(r, units, pi)
+
+
+def sphere_area(radius, u, pi):
+    volume = ((4 / 3) * pi * radius ** 3)
+    print("The volume of this sphere is "'{:>.2f} {}' " cubed.".format(volume, u))
+    return
+
+
+def sphere_volume(radius, u, pi):
+    area = (4 * pi * radius ** 2)
+    print("The area of this sphere is "'{:>.2f} {}' " squared.".format(area, u))
+
+
+main()

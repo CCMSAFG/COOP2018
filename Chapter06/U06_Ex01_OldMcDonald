@@ -1,0 +1,67 @@
+# U06_Ex01_OldMcDonald.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 14 Jan 2019
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise:
+#     Source: Python Programing
+#    Chapter:
+#
+# Program Description
+#
+#
+#
+#
+# Algorithm (pseudocode)
+#
+#
+#
+#
+#
+
+
+def main():
+    lyricsecction("cat", "meow")
+    print("\n")
+    lyricsecction("duck", "quack")
+    print("\n")
+    lyricsecction("chicken", "cluck")
+    print("\n")
+    lyricsecction("horse", "neigh")
+    print("\n")
+    lyricsecction("eagle", "squaw")
+
+
+def lyricsecction(animal, call,):
+    bande = "Old MacDonald had a farm, Ee-igh, Ee-igh, Oh!"
+    vowels = "aeiou"
+    animal_2 = ""
+    for char in vowels:
+        test_1 = animal[0].count(char)
+        if test_1 == 1:
+            animal_2 = "an {}".format(animal)
+            break
+        else:
+            animal_2 = "a {}".format(animal)
+    calls = ""
+    call_2 = ""
+    for char in vowels:
+        test_2 = call[0].count(char)
+        if test_2 == 1:
+            calls = "an {}, {}".format(call, call)
+            call_2 = "an {}".format(call)
+            break
+        else:
+            calls = "a {}, {}".format(call, call)
+            call_2 = "a {}".format(call)
+
+    print(bande,
+          "\nAnd on that farm he had", animal_2, "Ee-igh, Ee-igh, Oh!"
+          "\nWith", calls, "here and", calls, "there."
+          "\nHere", call_2, "there", call_2, "everywhere", calls+".",
+          "\n"+bande)
+main()

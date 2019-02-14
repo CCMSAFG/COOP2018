@@ -1,0 +1,136 @@
+# U06_Ex06_TriangleDef.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 23 Jan 2019
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise:
+#     Source: Python Programing
+#    Chapter:
+#
+# Program Description
+#
+#
+#
+#
+# Algorithm (pseudocode)
+#
+
+
+#
+#
+#
+from graphics import *
+from math import *
+
+
+def main():
+    win = GraphWin("Triangle Draw", 1280, 720)
+    win.setBackground("powder blue")
+
+    click_to_start = Text(Point(640, 60), "Click the window at three points to draw a triangle.")
+    click_to_start.draw(win)
+
+    coords_a = click("a", win, 0)
+    click_to_start.undraw()
+
+    dot_2 = Text(Point(640, 60), "Click the window another point to plot a second vertex.")
+    dot_2.draw(win)
+
+    coords_b = click("b", win, coords_a)
+    dot_2.undraw()
+    dot_3 = Text(Point(640, 60), "Click the window at one more point to finalize the triangle.")
+    dot_3.draw(win)
+
+    coords_c = click("c", win, coords_b)
+    dot_3.undraw()
+
+    line_3 = Line(coords_a, coords_c)
+    line_3.draw(win)
+
+    make_tri = Polygon(coords_a, coords_b, coords_c)
+    make_tri.setFill("purple")
+    make_tri.draw(win)
+
+    line_3.undraw()
+
+    sl_1 = perimeter(coords_a, coords_b)
+    sl_2 = perimeter(coords_c, coords_b)
+    sl_3 = perimeter(coords_a, coords_c)
+
+    per_value = sl_1 + sl_2 + sl_3
+    draw_perimeter = Text(Point(640, 60), "The perimeter of this triangle is {:>.0f} pixels.".format(per_value))
+    draw_perimeter.draw(win)
+
+    area_value = tri_area(sl_1, sl_2, sl_3, per_value)
+    area_value_float = float(area_value)
+    draw_area = Text(Point(640, 30), "The area of this triangle is {:>.0f} pixels squared.".format(area_value_float))
+    draw_area.draw(win)
+
+    conclusion = Text(Point(640, 90), "Click the window once more to close the program.")
+    conclusion.draw(win)
+
+    win.getMouse()
+
+    win.close()
+
+
+def perimeter(point_1, point_2):
+
+    formatting_1a = str(point_1).split("(")
+    formatting_2a = formatting_1a[1].split(")")
+    x_y_1 = formatting_2a[0].split(",")
+    x_1 = x_y_1[0]
+    x_1.replace(".0", "")
+    x_1 = float(x_1)
+    y_1 = x_y_1[1]
+    y_1.replace(".0", "")
+    y_1 = float(y_1)
+
+
+    formatting_1b = str(point_2).split("(")
+    formatting_2b = formatting_1b[1].split(")")
+    x_y_2 = formatting_2b[0].split(",")
+    x_2 = x_y_2[0]
+    x_2.replace(".0", "")
+    x_2 = float(x_2)
+    y_2 = x_y_1[1]
+    y_2.replace(".0", "")
+    y_2 = float(y_2)
+
+    x_value = abs(x_1 - x_2)
+    y_value = abs(y_1 - y_2)
+    side_length = sqrt((x_value ** 2) + (y_value ** 2))
+    return side_length
+
+
+def click(point_number, win, l_end):
+    point = win.getMouse()
+    first_circ = Circle(Point(point.getX(), point.getY()), 2)
+    first_circ.setFill("black")
+    first_circ.draw(win)
+    coords = Point(point.getX(), point.getY())
+    if "a" == point_number:
+        coords_a = coords
+        return coords_a
+    elif "b" == point_number:
+        line_1 = Line(l_end, coords)
+        line_1.draw(win)
+        coords_b = coords
+        return coords_b
+    elif "c" == point_number:
+        coords_c = coords
+        line_2 = Line(l_end, coords_c)
+        line_2.draw(win)
+        return coords_c
+
+
+def tri_area(side_a, side_b, side_c, p):
+        area = str(sqrt(p * (p - side_a) * (p - side_b) * (p - side_c)))
+        return area
+
+
+main()
