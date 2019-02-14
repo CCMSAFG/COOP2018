@@ -24,6 +24,8 @@
 # - Add a place holder " X"
 # - Split the names( first, middle, last, etc.)
 #   by the spaces between them
+# - Using the word function given by the book,
+#   find the value of each name
 # - Accumulate the value of the previous
 #   name and the full value of all the
 #   names
@@ -31,7 +33,7 @@
 #       * If no, print error message
 #       * If yes, accumulate the value
 #         using the parameter.
-#
+# - Format and print conclusion
 #
 
 
