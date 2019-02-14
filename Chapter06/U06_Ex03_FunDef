@@ -7,21 +7,26 @@
 #     IDE: PyCharm
 #
 # Assignment Info
-#   Exercise:
+#   Exercise: 03
 #     Source: Python Programing
-#    Chapter:
+#    Chapter: 06
 #
 # Program Description
-#
-#
+# Finds Volume and Area of a sphere
+# using functions
 #
 #
 # Algorithm (pseudocode)
+# import math
+# get input of the radius and units of the sphere
 #
+# define the area function:
+# (volume = ((4 / 3) * pi * radius ** 3))
 #
+# define volume function:
+# (area = (4 * pi * radius ** 2))
 #
-#
-#
+# Format responses to be appealing.
 
 
 def main():

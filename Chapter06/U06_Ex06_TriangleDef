@@ -7,22 +7,25 @@
 #     IDE: PyCharm
 #
 # Assignment Info
-#   Exercise:
+#   Exercise: 06
 #     Source: Python Programing
-#    Chapter:
+#    Chapter: 06
 #
 # Program Description
-#
+# Finds the perimeter and area of a triangle you draw using graphics.py
 #
 #
 #
 # Algorithm (pseudocode)
-#
-
-
-#
-#
-#
+# Import graphics and math
+# Make a window
+# Set so that the user clicks three points on the screen to draw a triangle(gather the coordinates of the points)
+#   use a function to define the click
+# draw a polygon using the coordinates gathered
+# Use  distance between points code made in Ch.3 Ex.7 to aid in determining perimeter
+# use a function to determine the area using the math library, side length calculations, and perimeter values
+# (square root of perimeter * (perimeter - side_a) * (perimeter - side_b) * (perimeter - side_c))
+# format and print conclusion
 from graphics import *
 from math import *
 

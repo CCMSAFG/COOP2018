@@ -7,21 +7,22 @@
 #     IDE: PyCharm
 #
 # Assignment Info
-#   Exercise:
+#   Exercise: 01
 #     Source: Python Programing
-#    Chapter:
+#    Chapter: 06
 #
 # Program Description
-#
+# Uses a function to sing "Old MacDonald"
 #
 #
 #
 # Algorithm (pseudocode)
-#
-#
-#
-#
-#
+# - Set up lyric function having the animal and its
+# corresponding sound as parameters.
+# - Set up test for proper grammar using 3 for loops
+# testing of a or an using vowels
+# - Print the results using the preset song
+# in the book
 
 
 def main():

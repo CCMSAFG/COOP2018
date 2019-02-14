@@ -12,14 +12,25 @@
 #    Chapter:
 #
 # Program Description
-#
+# This code Finds the "value" of the letters in a sentence (A=1, B=2, C=3...etc.)
 #
 #
 #
 # Algorithm (pseudocode)
-#
-#
-#
+# - Get a name from a user input
+# - Format the name into all lowers
+#   as Caps and Lowercase have same
+#   values
+# - Add a place holder " X"
+# - Split the names( first, middle, last, etc.)
+#   by the spaces between them
+# - Accumulate the value of the previous
+#   name and the full value of all the
+#   names
+# - Test to see if there are words:
+#       * If no, print error message
+#       * If yes, accumulate the value
+#         using the parameter.
 #
 #
 
@@ -41,7 +52,7 @@ def main():
             continue
         else:
             value_accumulation += word(parameter)
-    print('The numeric value of {} is {}.'.format(full_name, value_accumulation))
+    print('The numeric value of "{}" is {}.'.format(full_name, value_accumulation))
 
 
 def word(x):

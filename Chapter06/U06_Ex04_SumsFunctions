@@ -7,21 +7,21 @@
 #     IDE: PyCharm
 #
 # Assignment Info
-#   Exercise:
+#   Exercise: 04
 #     Source: Python Programing
-#    Chapter:
+#    Chapter: 06
 #
 # Program Description
-#
+# This program sums the values in a number provided by the user and the sum of its cubes.
 #
 #
 #
 # Algorithm (pseudocode)
-#
-#
-#
-#
-#
+# Print intro
+# Get how high the numbers go up to from user
+# - Define sum of that input using for loop and accumulator
+# - Define sum of the input's cubes using for loop and accumulator
+# format response
 
 
 def main():
