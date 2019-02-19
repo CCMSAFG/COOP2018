@@ -1,0 +1,78 @@
+# U06_Ex07_FibNumber.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 19 Feb 2019
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 07
+#     Source: Python Programing
+#    Chapter: 06
+#
+# Program Description
+# This is a program for the Fibonacci number for a value you input.
+#
+#
+#
+# Algorithm (pseudocode)
+# - Print Introduction
+# - Get the value of "n" from user input
+# - Have the program test to see if "n"
+#   is a positive integer
+#   (if not, print an error message)
+# - run a "fib_number" function
+#   * set up 3 variables
+#     x = 0
+#     y = 1
+#     z = 0
+#   * test to see if "n" is 3 or greater
+#     (If not, return their value in a variable)
+#     (If so, z = y + x
+#             y = x
+#             x = z
+#      then run this through a loop "n" times)
+#   * put the final value into a variable and
+#     return that variable
+# - Use the returned variable to format a conclusion
+# - Make sure all the data types are compatible for
+#   print statements
+
+
+def main():
+    print("This is a program for the Fibonacci number for a value you input.")
+
+    n = eval(input("Please insert the value of n:"))
+    n_str = str(n)
+    fib_number(n)
+    x = (fib_number(n))
+    if n >= 0:
+        print('Plugging your number "'+n_str+'" as n into the Fibonacci sequence produces the number', x+'.')
+    else:
+        print("Can not compute input, please insert a positive integer")
+
+
+def fib_number(n):
+    t_1 = 0
+    t_2 = 1
+    t_3 = 0
+    x = ""
+    if n < 0:
+        x = n
+    elif n == 0:
+        x = str(0)
+    elif n == 1:
+        x = str(1)
+    elif n == 2:
+        x = str(1)
+    else:
+        for i in range(n):
+            t_3 = t_2 + t_1
+            t_2 = t_1
+            t_1 = t_3
+            x = str(t_3)
+    return x
+
+
+main()
