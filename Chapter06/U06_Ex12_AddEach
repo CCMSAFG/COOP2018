@@ -1,4 +1,4 @@
-# U06_Ex11_SquareEach.py
+# U06_Ex12_AddEach.py
 #
 #  Author: Jake
 #  Course: Coding for OOP
@@ -7,48 +7,49 @@
 #     IDE: PyCharm
 #
 # Assignment Info
-#   Exercise: 11
+#   Exercise: 12
 #     Source: Python Programing
 #    Chapter: 06
 #
 # Program Description
-# Uses a definition/function (squareEach)
-# to square a list of numbers given by the user
+# Uses a definition/function (sumList)
+# to add a series of numbers given by the
+# user in the form of a list.
 #
 #
 # Algorithm (pseudocode)
 # - Input number list in for of a string
-# - Make "SquareEach" function
+# - Make "sumList" function
 #   - split string into a list of numbers
 #   - Have an "if True" statement to test if
 #     a "ValueError" will occur, if so, print
 #     a warning prompt, if not, continue def
 #   - for loop to run each number through
-#     and square it. Use this value to print
+#     and add it to the previous value
+#     (initial value = 0)
+#     Use this value to print
 #     a conclusion
-#     ("input" squared is "output".)
 # - End function/code
-#
-#
 #
 
 
 def main():
 
-    str_nums = input("Input a list of numbers you wished to be squared separated by commas:")
+    str_nums = input("Input a list of numbers you wish to add separated by commas:")
     print('  ')
 
-    square_each(str_nums)
+    sum_list(str_nums)
 
 
-def square_each(nums):
+def sum_list(nums):
     num_list = nums.split(", ")
     if True:
         try:
+            add_num = 0
             for num in num_list:
                 num_int = int(num)
-                nums_squared = num_int * num_int
-                print('{} squared is {}.'.format(num, nums_squared))
+                add_num = add_num + num_int
+            print('Your terms add up to {}'.format(add_num))
             print("Feel free to rerun this program with more numbers.")
         except ValueError:
             print('Something went wrong, your input, "{}" can not be computed.'.format(nums))
