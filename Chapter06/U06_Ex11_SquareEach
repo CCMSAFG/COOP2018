@@ -1,0 +1,59 @@
+# U06_Ex11_SquareEach.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 25 Feb 2019
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 11
+#     Source: Python Programing
+#    Chapter: 06
+#
+# Program Description
+# Uses a definition/function (squareEach)
+# to square a list of numbers given by the user
+#
+#
+# Algorithm (pseudocode)
+# - Input number list in for of a string
+# - Make "SquareEach" function
+#   - split string into a list of numbers
+#   - Have an "if True" statement to test if
+#     a "ValueError" will occur, if so, print
+#     a warning prompt, if not, continue def
+#   - for loop to run each number through
+#     and square it. Use this value to print
+#     a conclusion
+#     ("input" squared is "output".)
+# - End function/code
+#
+#
+#
+
+
+def main():
+
+    str_nums = input("Input a list of numbers you wished to be squared separated by commas:")
+    print('  ')
+
+    square_each(str_nums)
+
+
+def square_each(nums):
+    num_list = nums.split(", ")
+    if True:
+        try:
+            for num in num_list:
+                num_int = int(num)
+                nums_squared = num_int * num_int
+                print('{} squared is {}.'.format(num, nums_squared))
+                print("Feel free to rerun this program with more numbers.")
+        except ValueError:
+            print('Something went wrong, your input, "{}" can not be computed.'.format(nums))
+            print("Please refer to instructions to receive a proper output")
+            pass
+
+
+main()
