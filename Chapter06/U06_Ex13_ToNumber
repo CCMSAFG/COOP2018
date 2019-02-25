@@ -1,0 +1,56 @@
+# U06_Ex13_ToNumber.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 25 Feb 2019
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 13
+#     Source: Python Programing
+#    Chapter: 06
+#
+# Program Description
+# Uses a definition/function (toNumber)
+# to convert a series of numbers given by the
+# user into the data-type integer.
+#
+#
+# Algorithm (pseudocode)
+# - Input number list in for of a string
+# - Make "toNumber" function
+#   - split string into a list of numbers (str)
+#   - Have an "if True" statement to test if
+#     a "ValueError" will occur, if so, print
+#     a warning prompt, if not, continue def
+#   - for loop to run each number through
+#     and convert to int (x_int = int(x))
+#     Use this value to print
+#     a conclusion
+# - End function/code
+#
+
+
+def main():
+
+    str_nums = input("Input a list of numbers you wish to add separated by commas:")
+    print('  ')
+
+    to_number(str_nums)
+
+
+def to_number(nums):
+    num_list = nums.split(", ")
+    if True:
+        try:
+            for num in num_list:
+                num_int = int(num)
+                print('"{}" as an integer is {}'.format(num, num_int))
+        except ValueError:
+            print('Something went wrong, your input, "{}" can not be computed int integers.'.format(nums))
+            print("Please refer to instructions to receive a proper output")
+            pass
+
+
+main()
