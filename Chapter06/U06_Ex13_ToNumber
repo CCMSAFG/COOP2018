@@ -18,39 +18,23 @@
 #
 #
 # Algorithm (pseudocode)
-# - Input number list in for of a string
+# - Have a numbered list in data type of a string
 # - Make "toNumber" function
-#   - split string into a list of numbers (str)
-#   - Have an "if True" statement to test if
-#     a "ValueError" will occur, if so, print
-#     a warning prompt, if not, continue def
-#   - for loop to run each number through
-#     and convert to int (x_int = int(x))
-#     Use this value to print
-#     a conclusion
-# - End function/code
+#   - make a for loop to convert all string values
+#     (i) and output int(i) return the int list
+# - print conclusion
 #
 
 
 def main():
-
-    str_nums = input("Input a list of numbers you wish to add separated by commas:")
-    print('  ')
-
-    to_number(str_nums)
+    list_nums = ['1', '2', '3']
+    int_nums = to_number(list_nums)
+    print('"{}" converted fromm str to int is "{}".'.format(list_nums, int_nums))
 
 
-def to_number(nums):
-    num_list = nums.split(", ")
-    if True:
-        try:
-            for num in num_list:
-                num_int = int(num)
-                print('"{}" as an integer is {}'.format(num, num_int))
-        except ValueError:
-            print('Something went wrong, your input, "{}" can not be computed int integers.'.format(nums))
-            print("Please refer to instructions to receive a proper output")
-            pass
+def to_number(num_list):
+    num_list_int = [int(i) for i in num_list]
+    return num_list_int
 
 
 main()
