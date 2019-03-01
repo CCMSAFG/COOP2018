@@ -1,0 +1,79 @@
+# U07_Ex12_DateCheck.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 01 Mar 2019
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 12
+#     Source: Python Programing
+#    Chapter: 07
+#
+# Program Description
+# This Program tests to see if an inputted date has or will
+# exist taking leap years into account.
+#
+# Algorithm (pseudocode)
+# - Get date input (mm/dd/yyyy)
+# - Separate and gather values of
+#   month, day, and year
+# - Set up the two number of days per month
+#   (one for leap year one for regular year)
+# - Use function from U07Ex11 to determine if the year
+#   is a leap year
+# - Test to see of the date inputted has proper has
+#   enough days in the month to exist.
+# - use and "Exist" variable to keep track.
+# - If the date existed or will exist,
+#   print conclusion 1
+# - If the date won't exist or will never exist,
+#   print conclusion 2
+#
+
+
+def main():
+
+    date = input("\nEnter the date in format mm/dd/yyyy: ")
+    month = int(date[0:2])
+    day = int(date[3:5])
+    year = date[6:10]
+    print(month)
+    print(day)
+    print(year)
+
+    if leap_year_calc(year):
+        num_of_days = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    else:
+        num_of_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+    try:
+        exist = "1"
+        if day <= num_of_days[int(month) - 1]:
+            exist = "1"
+        else:
+            exist = "0"
+        exist = exist
+        print(exist)
+    except IndexError:
+        exist = "0"
+
+    if exist == "1":
+        print('Your inputted date, "{}", has/will exist(ed).'.format(date))
+    else:
+        print('Your inputted date, "{}", has not/will not exist(ed).'.format(date))
+
+
+def leap_year_calc(year):
+    int_year = int(year)
+    if int_year % 400 == 0 and int_year % 100 == 0:
+        return True
+    elif int_year % 4 == 0 and int_year % 100 != 0:
+        return True
+    else:
+        return False
+
+
+if __name__ == '__main__':
+    main()
