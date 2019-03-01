@@ -63,4 +63,5 @@ def fine_calc(s_l, v_s):
             return 50 + fine
 
 
-main()
+if __name__ == '__main__':
+    main()
