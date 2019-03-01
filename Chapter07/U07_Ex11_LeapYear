@@ -1,0 +1,61 @@
+# U07_Ex11_LeapYear.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 01 Mar 2019
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 11
+#     Source: Python Programing
+#    Chapter: 07
+#
+# Program Description
+# This program will figure out if a year entered
+# by the user is a leap year or not
+# (A year is a leap year if it divisible by 4,
+# unless it is the beginning of a new century
+# that isn't divisible by 400.
+#
+#
+#
+# Algorithm (pseudocode)
+# - Intro
+# - Get year number from input
+# - make a "calculation" function
+#    - If the remainder of input/400 is 0
+#      and remainder of input/100 is also 0,
+#      set and return the value of "true"
+#    - If the remainder of input/4 is 0
+#      and remainder of input/100 is not 0,
+#      set and return the value of "true"
+#    - if these aren't true return "false"
+# - if function(input) is true, print that
+#   that year was/will be a leap year
+# - if function(input) is false, print that
+#   that year wasn't/won't be a leap year
+#
+
+
+def main():
+    print("This program tests a year number to see if it is a leap year.")
+    year_number = input("Please input a year to determine if it is a leap year:")
+    if leap_year_calc(year_number):
+        print('\nThe year, {0}, is a leap year.'.format(year_number))
+    else:
+        print('\nThe year, {0}, is not a leap year.'.format(year_number))
+
+
+def leap_year_calc(year):
+
+    if year % 400 == 0 and year % 100 == 0:
+        return True
+    elif year % 4 == 0 and year % 100 != 0:
+        return True
+    else:
+        return False
+
+
+if __name__ == '__main__':
+    main()
