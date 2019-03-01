@@ -28,10 +28,10 @@
 #   letter grade equivalent
 #       * Test if under 0      --> error
 #       * Test if under 60     --> F
-#       * Test if under 70     --> D
-#       * Test if under 80     --> C
-#       * Test if under 90     --> B
-#       * Test if 100 or under --> A
+#       * Test if under 70     --> D(-, ,or +)
+#       * Test if under 80     --> C(-, ,or +)
+#       * Test if under 90     --> B(-, ,or +)
+#       * Test if 100 or under --> A(-, ,or +)
 #       * Test if over 100     --> error
 #   return the letter value
 # - If the output from above function is "error",
@@ -67,8 +67,10 @@ def lttr_grade(x):
         grade = "C"
     elif x < 90:
         grade = "B"
-    elif x >= 100:
+    elif x >= 90:
         grade = "A"
+    elif x > 100:
+        grade = "error"
     else:
         grade = "error"
     return grade
@@ -91,5 +93,10 @@ def modifier(i):
             else:
                 extra = "-"
         return extra
+    else:
+        if len(i_list) == 3:
+            extra = "+"
+            return extra
+
 
 main()
