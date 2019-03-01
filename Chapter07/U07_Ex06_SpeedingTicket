@@ -1,0 +1,66 @@
+# U07_Ex06_SpeedingTicket.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 01 Mar 2019
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 06
+#     Source: Python Programing
+#    Chapter: 07
+#
+# Program Description
+# This program uses Podunksville's speeding
+# ticket fine policy to determine the cost of
+# a speeding ticket.
+#
+#
+#
+# Algorithm (pseudocode)
+# - Intro
+# - Get speed limit from user
+# - Get the speed of the vehicle from user
+# - make a "fine calculation" function
+#   - checks if vehicle speed was over speed limit
+#      - if so, continue
+#      - if not, return 0
+#   - (Vehicle speed - speed limit)x5 = additional cost
+#   - if Vehicle speed is 90 or more,
+#     the base fine changes from $50 to $200
+#   - Add base fine to additional cost and return that value
+# - Print conclusion
+#
+
+
+def main():
+    print("This program uses Podunksville's speeding "
+          "\nticket fine policy to determine the cost of"
+          "\na speeding ticket.")
+
+    speed_limit = eval(input("\nEnter the speed limit without units: "))
+    vehicle_speed = eval(input("\nEnter the speed of the vehicle without units: "))
+    print("")
+
+    total_fine = fine_calc(speed_limit, vehicle_speed)
+    if total_fine > 0:
+        print("Since a vehicle was moving at {}mph, and the speed limit is {}mph,"
+              "\nthe price of the speeding ticket will be ${}.".format(vehicle_speed, speed_limit, total_fine))
+    else:
+        print("No payment is needed as the driver was within the"
+              "\nconfines of the law.")
+
+
+def fine_calc(s_l, v_s):
+    if v_s <= s_l:
+        return 0
+    else:
+        fine = (int(v_s) - int(s_l)) * 5
+        if v_s > 90:
+            return 250 + fine
+        else:
+            return 50 + fine
+
+
+main()
