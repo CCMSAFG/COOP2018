@@ -48,10 +48,10 @@ def main():
 
 
 def leap_year_calc(year):
-
-    if year % 400 == 0 and year % 100 == 0:
+    int_year = int(year)
+    if int_year % 400 == 0 and int_year % 100 == 0:
         return True
-    elif year % 4 == 0 and year % 100 != 0:
+    elif int_year % 4 == 0 and int_year % 100 != 0:
         return True
     else:
         return False
