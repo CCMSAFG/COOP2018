@@ -1,0 +1,51 @@
+# U08_Ex08_EuclidGCD.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 25 Mar 2019
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 08
+#     Source: Python Programing
+#    Chapter: 08
+#
+# Program Description
+# This code finds the Greatest Common Divisor
+# between two numbers given by the user.
+#
+# Algorithm (pseudocode)
+# - Intro
+#
+# - Get the first and second value
+#
+# - Find which number is lower
+#
+# - Initialize the Greatest Common Divisor variable
+#
+# - For loop with the range from 1 to (the lower number + 1)
+#       if both x and y % i = 0 it is a common divisor,
+#       the last common factor found will be the greatest
+#       common divisor
+#
+# - Print and format the GCD
+
+
+def main():
+    print("This code finds the Greatest Common Divisor"
+          "\nbetween two numbers given by the user.")
+    x = int(input("\nEnter your first number:"))
+    y = int(input("Enter your second number:"))
+    if x > y:
+        lower_number = y
+    else:
+        lower_number = x
+    gcd = 1
+    for i in range(1, lower_number + 1):
+        if (x % i == 0) and (y % i == 0):
+            gcd = i
+    print("{} is the greatest common divisor of {} and {}.".format(gcd, x, y))
+
+
+main()

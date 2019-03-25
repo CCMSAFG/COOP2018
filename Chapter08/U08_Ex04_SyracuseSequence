@@ -1,0 +1,64 @@
+# U08_Ex04_SyracuseSequence.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 25 Mar 2019
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 04
+#     Source: Python Programing
+#    Chapter: 08
+#
+# Program Description
+# This code sends a given input through the Syracuse Sequence.
+# It is hypothesized that every integer greater than one
+# will conclude the sequence at one.#
+#
+# Algorithm (pseudocode)
+# - Intro
+#
+# - Get input
+#
+# - Store starting value for later use
+#
+# - Set up while loop, so it
+#   continues until the sequence value
+#   equals one
+#
+# - Have the input go through the
+#   Syracuse Sequence given
+#
+# - Print that value before going
+#   back through the loop
+#
+# - After while loop finishes,
+#   print "1" for styling
+#
+# - Conclusion using stored
+#   starting value
+
+
+def main():
+    print("This code sends a given input through the Syracuse Sequence."
+          "\nThis sequence hypothesizes that every integer greater than one"
+          "\nwill conclude the sequence at one."
+          "\n"
+          "\nThis code will only conclude once the value is one."
+          "\n")
+
+    n = eval(input("Please enter a number greater than 1:"))
+    starting_n = n
+
+    while n != 1:
+        print(int(n))
+        if n % 2 == 1:
+            n = (n*3 + 1)
+        else:
+            n = n/2
+    print("1")
+    print('\nYour starting value, "{}" confirms the hypothesis.'.format(starting_n))
+
+
+main()

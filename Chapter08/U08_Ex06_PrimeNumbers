@@ -1,0 +1,57 @@
+# U08_Ex06_PrimeNumbers.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 25 Mar 2019
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise: 06
+#     Source: Python Programing
+#    Chapter: 08
+#
+# Program Description
+# This code finds, counts, and presents all
+# prime numbers between zero and a given input.
+#
+#
+# Algorithm (pseudocode)
+# - Intro
+#
+# - Get input
+#
+# - Make a list from 0 to the given integer
+#
+# - Make a for loop in the range of your input + 1
+#   * If "list value" % 2, 3, 5, or 7 = 0,
+#     remove that number from the list
+#   * Make sure to not remove values of
+#     2, 3, 5, or 7 by adding and statements
+#   * Make sure to remove 1 from the list
+# - Conclusion and format prime number list
+
+
+def main():
+    print("This code finds, counts, and presents all"
+          "\nprime numbers between zero and a given input.")
+    n = eval(input("\nInput a positive integer greater than one:"))
+    n_to_zero = list(range(n+1))
+    for num in range(n+1):
+        if num == 1:
+            n_to_zero.remove(num)
+        elif num % 2 == 0 and num != 2:
+            n_to_zero.remove(num)
+        elif num % 3 == 0 and num != 3:
+            n_to_zero.remove(num)
+        elif num % 5 == 0and num != 5:
+            n_to_zero.remove(num)
+        elif num % 7 == 0and num != 7:
+            n_to_zero.remove(num)
+
+    num_of_primes = len(n_to_zero)
+    print("There are {} prime numbers between 0 and {}.".format(num_of_primes, n))
+    print("Prime Numbers:{}".format(n_to_zero))
+
+
+main()
