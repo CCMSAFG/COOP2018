@@ -39,9 +39,6 @@ def main():
     month = int(date[0:2])
     day = int(date[3:5])
     year = date[6:10]
-    print(month)
-    print(day)
-    print(year)
 
     if leap_year_calc(year):
         num_of_days = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -55,7 +52,6 @@ def main():
         else:
             exist = "0"
         exist = exist
-        print(exist)
     except IndexError:
         exist = "0"
 

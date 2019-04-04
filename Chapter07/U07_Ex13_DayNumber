@@ -51,7 +51,7 @@ def main():
         print('The date,"{}", occurs on day number {} of the year'.format(date, day_value))
     else:
         print('Your inputted date, "{}", does or will not exits,'
-              'therefore, a its day number can not be calculated.).'.format(date))
+              'therefore, a its day number can not be calculated.'.format(date))
 
 
 def valid_date(date):

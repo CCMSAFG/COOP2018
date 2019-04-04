@@ -43,18 +43,17 @@ def main():
 
 def sum_list(nums):
     num_list = nums.split(", ")
-    if True:
-        try:
-            add_num = 0
-            for num in num_list:
-                num_int = int(num)
-                add_num = add_num + num_int
-            print('Your terms add up to {}'.format(add_num))
-            print("Feel free to rerun this program with more numbers.")
-        except ValueError:
-            print('Something went wrong, your input, "{}" can not be computed.'.format(nums))
-            print("Please refer to instructions to receive a proper output")
-            pass
+    try:
+        add_num = 0
+        for num in num_list:
+            num_int = int(num)
+            add_num = add_num + num_int
+        print('Your terms add up to {}'.format(add_num))
+        print("Feel free to rerun this program with more numbers.")
+    except ValueError:
+        print('Something went wrong, your input, "{}" can not be computed.'.format(nums))
+        print("Please refer to instructions to receive a proper output")
+        pass
 
 
 main()

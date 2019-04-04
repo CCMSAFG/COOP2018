@@ -40,7 +40,7 @@
 
 def main():
     print("This program tests a year number to see if it is a leap year.")
-    year_number = input("Please input a year to determine if it is a leap year:")
+    year_number = input("Please input a year to determine if it is/was a leap year:")
     if leap_year_calc(year_number):
         print('\nThe year, {0}, is a leap year.'.format(year_number))
     else:
