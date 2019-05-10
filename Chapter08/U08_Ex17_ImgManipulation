@@ -12,14 +12,24 @@
 #    Chapter:
 #
 # Program Description
-#
+# Changes the look of an image using buttons in a graphics window
 #
 #
 #
 # Algorithm (pseudocode)
-#
-#
-#
+#  Import graphics
+#  Made the window dimensions and background
+#  Make a seres of button labels across the right side of the window using a
+# loop in a separate function.
+#   Make a border for the picture to be placed in to make the
+# product look better
+#  Draw the picture into the window
+#  Using algorithms to check every pixel in the image in order to
+# manipulate it using a separate algorithm for the specific adjustment
+# (negative, saturation, mirror, etc.)
+#  Have it so a click initiates the change based on if the user clicks within
+# the coordinates being used by the corresponding button.
+#  Close the program after the user clicks again after the manipulation is completed.
 #
 #
 
