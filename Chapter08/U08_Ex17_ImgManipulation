@@ -1,0 +1,173 @@
+# U08_Ex17_ImgManipulation.py
+#
+#  Author: Jake
+#  Course: Coding for OOP
+# Section: A2
+#    Date: 29 Mar 2019
+#     IDE: PyCharm
+#
+# Assignment Info
+#   Exercise:
+#     Source: Python Programing
+#    Chapter:
+#
+# Program Description
+#
+#
+#
+#
+# Algorithm (pseudocode)
+#
+#
+#
+#
+#
+
+from graphics import *
+
+
+def main():
+    win = GraphWin("Image Manipulation", 1280, 800)
+    win.setBackground("Black")
+    win.setCoords(0, 0, 40, 25)
+
+    draw_menu(win)
+    draw_picbox(win)
+
+    img = Image(Point(16, 12.5), "Skinny-Wolverine_2.ppm")
+    width = img.getWidth()
+    height = img.getHeight()
+    img.draw(win)
+
+    interaction = click_control(win)
+    img.undraw()
+    check_pix(width, height, img, interaction)
+    img.draw(win)
+
+    win.getMouse()
+    win.close()
+
+
+def button_label(win):
+    title_list = ["Load Image", "Save Image", "Quit", "Greyscale", "Negative",
+                  "Deep Fried", "Mirror Symmetric", "GO Three"]
+    text = 0
+    y = 24.5
+    for i in range(8):
+        x = 35.5
+        y = y - 2
+        text_location = Point(x, y)
+        Text(text_location, title_list[text]).draw(win)
+        text = text + 1
+
+
+def draw_button(win):
+    y_1 = 25
+    for i in range(8):
+        x_1 = 33
+        x_2 = 38
+        y_1 = y_1 - 2
+        y_2 = y_1 - 1
+        button = Rectangle(Point(x_1, y_1), Point(x_2, y_2))
+        button.setFill("Gray")
+        button.setOutline("Black")
+        button.draw(win)
+        button_label(win)
+
+
+def draw_menu(win):
+    menu = Rectangle(Point(32, 1), Point(39, 24))
+    menu.setOutline("Black")
+    menu.setFill("White")
+    menu.draw(win)
+    draw_button(win)
+    return menu
+
+
+def draw_picbox(win):
+    picbox = Rectangle(Point(1, 1), Point(31, 24))
+    picbox.setFill("White")
+    picbox.setOutline("Black")
+    picbox.draw(win)
+    return picbox
+
+
+def check_pix(num_of_x, num_of_y, img, interaction):
+    for x in range(num_of_x):
+        for y in range(num_of_y):
+            rgb = img.getPixel(x, y)
+            if interaction == "gray_scale":
+                gray_scale(x, y, img, rgb)
+            elif interaction == "negative":
+                negative(x, y, img, rgb)
+            elif interaction == "deep_fried":
+                deep_fried(x, y, img, rgb)
+            elif interaction == "mirrored":
+                mirror(x, y, img, rgb)
+
+
+def gray_scale(x, y, img, rgb):
+    gray_avg = int(sum(rgb) / 3)
+    gray = gray_avg
+    img.setPixel(x, y, color_rgb(gray, gray, gray))
+
+
+def negative(x, y, img, rgb):
+    r, g, b = rgb
+    negative_r = 255 - r
+    negative_g = 255 - g
+    negative_b = 255 - b
+    img.setPixel(x, y, color_rgb(negative_r, negative_g, negative_b))
+
+
+def mirror(x, y, img, rgb):
+    r, g, b = rgb
+    total_x = img.getWidth()
+    if x > (total_x/2):
+        mirror_x = total_x - x
+        rgb = img.getPixel(mirror_x, y)
+        r, g, b = rgb
+        img.setPixel(x, y, color_rgb(r, g, b))
+    else:
+        img.setPixel(x, y, color_rgb(r, g, b))
+
+
+def deep_fried(x, y, img, rgb):
+    r, g, b = rgb
+    if r > 127:
+        r = 255
+    else:
+        r = 0
+    if g > 127:
+        g = 255
+    else:
+        g = 0
+    if b > 127:
+        b = 255
+    else:
+        b = 0
+    img.setPixel(x, y, color_rgb(r, g, b))
+
+
+def click_control(win):
+    click = win.getMouse()
+    x = click.getX()
+    y = click.getY()
+    z = 1
+    while z == 1:
+        if 33 <= x <= 38:
+            if 16 <= y <= 17:
+                z = "gray_scale"
+            elif 14 <= y <= 15:
+                z = "negative"
+            elif 12 <= y <= 13:
+                z = "deep_fried"
+            elif 10 <= y <= 11:
+                z = "mirrored"
+        else:
+            z = 0
+            return z
+    return z
+
+
+main()
